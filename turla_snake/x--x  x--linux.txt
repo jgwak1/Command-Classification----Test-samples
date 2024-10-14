@@ -1,0 +1,6 @@
+xdotool key --window "$rdp_window" Ctrl+Alt+Delete;
+sleep 6;
+xdotool key --window "$rdp_window" Down;
+sleep 6;
+xdotool key --window "$rdp_window" Return;
+sleep 15;

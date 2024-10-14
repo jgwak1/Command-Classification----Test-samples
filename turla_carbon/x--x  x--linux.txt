@@ -1,0 +1,1 @@
+exec-background bash -c "mkfifo input_pipe; mkfifo output_pipe; ncat -k -l 12345 0<output_pipe | ncat -lv 8081 1>output_pipe & tail -f input_pipe | ncat localhost 12345 &"

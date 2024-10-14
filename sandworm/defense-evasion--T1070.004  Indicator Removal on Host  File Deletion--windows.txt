@@ -1,0 +1,1 @@
+del /Q C:\Windows\System32\oradump.exe C:\Windows\System32\mslog.exe C:\Windows\System32\mslog.txt

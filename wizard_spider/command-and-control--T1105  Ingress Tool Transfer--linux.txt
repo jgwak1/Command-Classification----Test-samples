@@ -1,0 +1,4 @@
+mkdir -p ws_tools;
+cp kill.bat ./ws_tools/;
+cp window.bat ./ws_tools/;
+cp ryuk.exe ./ws_tools/;
