@@ -1,0 +1,1 @@
+Get-ChildItem 'C:\Windows\System32' -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName -Unique | Out-File 'C:\BenignScripts.txt'

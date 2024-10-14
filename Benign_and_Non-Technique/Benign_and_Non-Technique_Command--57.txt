@@ -1,0 +1,1 @@
+Get-Content C:\Reports\MonthlyReport.txt | Format-List -Property Path,Modified,Length -Verbose

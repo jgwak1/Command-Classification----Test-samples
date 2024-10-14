@@ -1,0 +1,1 @@
+Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name DisableTaskMgr -ErrorAction SilentlyContinue | ForEach-Object { if ($_.DisableTaskMgr -eq 1) { Write-Output 'Task Manager can be disabled.' } else { Write-Output 'Task Manager cannot be disabled.' } }

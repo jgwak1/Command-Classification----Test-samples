@@ -1,0 +1,1 @@
+Test-Connection -ComputerName '192.168.1.1' -Count 3 -Quiet

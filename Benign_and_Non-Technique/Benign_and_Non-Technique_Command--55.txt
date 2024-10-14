@@ -1,0 +1,1 @@
+Copy-Item C:\Logs\*.log C:\Backup\Logs -Recurse -Force

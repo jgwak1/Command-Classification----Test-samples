@@ -1,0 +1,1 @@
+Test-Connection -ComputerName 'server01' -Count 1 -ErrorAction SilentlyContinue

@@ -1,0 +1,1 @@
+Copy-Item -Path 'C:\Windows\System32\LogFiles\*' -Destination 'C:\Backup\System32' -Recurse -Force -ErrorAction SilentlyContinue

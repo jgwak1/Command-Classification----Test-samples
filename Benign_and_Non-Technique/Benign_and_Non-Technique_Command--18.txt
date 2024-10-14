@@ -1,0 +1,1 @@
+$env:USERPROFILE | ForEach-Object { Write-Output $_.FullName }

@@ -1,0 +1,1 @@
+Copy-Item -Path 'C:\Users\Public\Documents\Excel Workbooks\*' -Destination 'C:\Backup\Documents' -Recurse -Force -ErrorAction SilentlyContinue

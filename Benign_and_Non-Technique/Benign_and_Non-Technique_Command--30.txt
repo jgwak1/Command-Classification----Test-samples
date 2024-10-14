@@ -1,0 +1,1 @@
+New-Item C:\temp\benign_script.ps1 -Type File -Force

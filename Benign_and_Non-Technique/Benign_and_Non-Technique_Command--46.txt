@@ -1,0 +1,1 @@
+Get-ADUser -Filter {Name -like 'J*'} -Properties Enabled | Export-Csv 'C:\ADUsers.csv' -NoTypeInformation

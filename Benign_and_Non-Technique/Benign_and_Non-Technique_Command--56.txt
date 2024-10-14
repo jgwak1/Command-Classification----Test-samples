@@ -1,0 +1,1 @@
+Copy-Item -Path 'C:\Source\*' -Destination 'C:\Destination\' -Recurse -ErrorAction SilentlyContinue

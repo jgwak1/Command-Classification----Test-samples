@@ -1,0 +1,1 @@
+Start-Process cmd -ArgumentList '/c echo This is a simple benign command'

@@ -1,0 +1,1 @@
+Copy-Item C:\Windows\System32\*.* C:\Backup -Recurse -Force -ErrorAction SilentlyContinue

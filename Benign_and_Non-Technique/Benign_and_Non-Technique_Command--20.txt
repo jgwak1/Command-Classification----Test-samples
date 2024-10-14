@@ -1,0 +1,1 @@
+Get-EventLog -LogName Application | Where-Object {$_.EntryType -eq 'Error' -and $_.Source -eq 'System' -and $_.Message -like '*File Not Found*'} | Select-Object -First 10

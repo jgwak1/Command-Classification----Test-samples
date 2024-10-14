@@ -1,0 +1,1 @@
+Get-WmiObject Win32_OperatingSystem | Select-Object -Property Caption, CSName, InstallDate | Out-File C:\Win32OS.csv

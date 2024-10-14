@@ -1,0 +1,1 @@
+$env:ProgramFiles=\C:\Program Files (x86)\""

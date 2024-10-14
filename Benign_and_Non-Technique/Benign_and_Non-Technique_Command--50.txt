@@ -1,0 +1,1 @@
+New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell\' -Name 'ExecutionPolicy' -Value 'Unrestricted' -PropertyType 'String' -Force -ErrorAction SilentlyContinue

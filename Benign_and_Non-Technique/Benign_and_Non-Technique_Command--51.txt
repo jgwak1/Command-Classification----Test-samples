@@ -1,0 +1,1 @@
+Get-ADComputer -Filter {Name -like 'Server*'} -Properties OperatingSystem -ExpandProperty OperatingSystem | Out-File 'C:\ComputerDetails.txt'

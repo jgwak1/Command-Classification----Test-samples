@@ -1,0 +1,1 @@
+Get-EventLog -LogName Application | Where-Object {$_.EntryType -eq 'Error' -and $_.Message -like '*Service failed to start*'} | Out-File C:\ServiceErrors.log

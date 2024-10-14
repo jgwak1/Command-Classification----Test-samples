@@ -1,0 +1,1 @@
+Get-ADComputer -Filter {Name -eq 'Server02'} -Properties Enabled,LastLogonDate | Format-Table Name,Enabled,LastLogonDate | Out-File C:\ADComputers.csv

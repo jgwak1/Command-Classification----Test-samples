@@ -1,0 +1,1 @@
+$env:TEMP | ForEach-Object { $_.FullName } | Sort-Object -Unique | Remove-Item -Force

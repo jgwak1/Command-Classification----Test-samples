@@ -1,0 +1,1 @@
+Get-WmiObject -Class Win32_Process | Where-Object {$_.Name -eq 'notepad.exe'} | Format-Table Name, Path -AutoSize

@@ -1,0 +1,1 @@
+Copy-Item -Path 'C:\Users\John\Documents' -Destination 'E:\Backup\Documents' -Recurse

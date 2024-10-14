@@ -1,0 +1,1 @@
+Get-EventLog -LogName System | Where-Object {$_.EntryType -eq 'Warning' -and $_.Message -like 'Disk C:*' -and $_.TimeGenerated -gt (Get-Date).AddDays(-7)} | Select-Object -First 15
