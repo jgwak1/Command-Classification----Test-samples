@@ -1,0 +1,1 @@
+"C:\Windows\System32\reg.exe" ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "<<JY:NO DEFAULT-VALUE--DESC:'Name of the registry entry to be added'>>" /t REG_SZ /d "<<JY:NO DEFAULT-VALUE--DESC:'Data for new registry entry'>>" /f

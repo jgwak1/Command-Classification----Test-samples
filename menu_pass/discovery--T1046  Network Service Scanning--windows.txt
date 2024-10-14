@@ -1,0 +1,4 @@
+"C:\Windows\Temp
+\tcping.exe" "192.0.2.10
+" "445
+"

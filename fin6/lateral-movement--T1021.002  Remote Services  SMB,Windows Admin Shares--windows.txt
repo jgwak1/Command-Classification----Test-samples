@@ -1,0 +1,1 @@
+copy <<JY:NO DEFAULT-VALUE--DESC:'windows.bat or kill.bat'>> \\127.0.0.1\c$\windows\temp\

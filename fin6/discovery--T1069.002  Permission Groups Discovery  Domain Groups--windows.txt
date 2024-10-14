@@ -1,0 +1,1 @@
+"adfind.exe" -f (objectcategory=group) > ad_group.txt

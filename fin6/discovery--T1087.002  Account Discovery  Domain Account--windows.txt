@@ -1,0 +1,1 @@
+"adfind.exe" -f (objectcategory=person) > ad_users.txt

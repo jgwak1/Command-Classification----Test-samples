@@ -1,0 +1,1 @@
+"adfind.exe" -f (objectcategory=computer) > ad_computers.txt
