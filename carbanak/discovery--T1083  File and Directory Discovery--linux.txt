@@ -1,0 +1,1 @@
+ls -lsahR /var/ 2>/dev/null

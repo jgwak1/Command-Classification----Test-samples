@@ -1,0 +1,2 @@
+write-host "[*] Restarting Computer";
+Restart-Computer -Force;

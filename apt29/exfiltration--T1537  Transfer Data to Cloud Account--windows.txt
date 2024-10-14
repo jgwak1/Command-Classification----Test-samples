@@ -1,0 +1,22 @@
+$err = $(net use y: https://contoso-my.sharepoint.com/personal/johnd_contoso_onmicrosoft_com/ /user:Administrator "Password123!" 2>&1);
+if($err -Like "*System error 85*") {
+  Write-Host "OneDrive net drive is already mounted!";
+} elseif($err -Like "*System error 67*") {
+  Write-Host "OneDrive net drive mount failed - Check URL!";
+  Write-Host "https://contoso-my.sharepoint.com/personal/johnd_contoso_onmicrosoft_com/";
+  exit 1;
+} elseif($err -Like "*System error 1244*") {
+  Write-Host "Could not authenticate to OneDrive - Check Creds!";
+  Write-Host "User: Administrator";
+  Write-Host "Password: Password123!";
+  exit 1;
+}
+
+Write-Host "Mount Successful"
+Copy-Item "C:\Windows\Temp\WindowsParentalControlMigration.tmp" -Destination "y:\WindowsParentalControlMigration.tmp" -Force;
+if(!$?){
+  exit 1;
+}
+
+Write-Host "Copy Successfull"
+exit 0;

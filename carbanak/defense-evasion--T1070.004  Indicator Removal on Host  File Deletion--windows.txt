@@ -1,0 +1,2 @@
+Stop-Process -Name DefenderUpgradeExec;
+Remove-Item $env:TEMP\* -Recurse -Force -Erroraction 'silentlycontinue'

@@ -1,0 +1,1 @@
+C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\plink.exe kmitnick@10.0.0.7 -pw 79a&LbjM@MlW8XZa

@@ -1,0 +1,2 @@
+Move-Item plink.exe C:\Windows\Temp\plink.exe;
+echo n | C:\Windows\Temp\plink.exe -pw "azsxdcAZSXDC123" alfred@192.168.0.4 -R 3389:localhost:3389

