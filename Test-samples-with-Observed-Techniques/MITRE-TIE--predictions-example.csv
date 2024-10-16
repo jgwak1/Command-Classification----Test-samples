@@ -1,0 +1,611 @@
+rank,id,name,score
+1,T1082,System Information Discovery,0.00284785
+2,T1071.001,Web Protocols,0.002487008
+3,T1105,Ingress Tool Transfer,0.002367292
+4,T1059.003,Windows Command Shell,0.002351556
+5,T1547.001,Registry Run Keys / Startup Folder,0.002134157
+6,T1070.004,File Deletion,0.002089193
+7,T1083,File and Directory Discovery,0.002027679
+8,T1057,Process Discovery,0.001789006
+9,T1027,Obfuscated Files or Information,0.001687796
+10,T1016,System Network Configuration Discovery,0.001669024
+11,T1033,System Owner/User Discovery,0.001581731
+12,T1204.002,Malicious File,0.001552688
+13,T1140,Deobfuscate/Decode Files or Information,0.001535782
+14,T1005,Data from Local System,0.001503057
+15,T1573.001,Symmetric Cryptography,0.001406959
+16,T1112,Modify Registry,0.001395524
+17,T1056.001,Keylogging,0.001354036
+18,T1036.005,Match Legitimate Name or Location,0.001324619
+19,T1053.005,Scheduled Task,0.001303674
+20,T1106,Native API,0.001224183
+21,T1566.001,Spearphishing Attachment,0.001170371
+22,T1113,Screen Capture,0.001154801
+23,T1041,Exfiltration Over C2 Channel,0.001125987
+24,T1518.001,Security Software Discovery,0.001106505
+25,T1059.005,Visual Basic,0.001096879
+26,T1543.003,Windows Service,0.001092614
+27,T1012,Query Registry,0.001028573
+28,T1027.002,Software Packing,0.000957543
+29,T1074.001,Local Data Staging,0.000862727
+30,T1218.011,Rundll32,0.000861549
+31,T1059.001,PowerShell,0.000860034
+32,T1132.001,Standard Encoding,0.000791672
+33,T1095,Non-Application Layer Protocol,0.000733607
+34,T1497.001,System Checks,0.00068562
+35,T1562.001,Disable or Modify Tools,0.000651916
+36,T1055.001,Dynamic-link Library Injection,0.000639133
+37,T1124,System Time Discovery,0.00063177
+38,T1555.003,Credentials from Web Browsers,0.000627435
+39,T1047,Windows Management Instrumentation,0.000590334
+40,T1036.004,Masquerade Task or Service,0.00058181
+41,T1003.001,LSASS Memory,0.000544233
+42,T1574.002,DLL Side-Loading,0.000541781
+43,T1548.002,Bypass User Account Control,0.000529499
+44,T1204.001,Malicious Link,0.000523559
+45,T1553.002,Code Signing,0.000517892
+46,T1573.002,Asymmetric Cryptography,0.000505857
+47,T1049,System Network Connections Discovery,0.000496387
+48,T1569.002,Service Execution,0.000490599
+49,T1119,Automated Collection,0.000455764
+50,T1010,Application Window Discovery,0.000441482
+51,T1564.001,Hidden Files and Directories,0.000429322
+52,T1055.012,Process Hollowing,0.000425332
+53,T1588.002,Tool,0.000424727
+54,T1070.006,Timestomp,0.000424015
+55,T1021.001,Remote Desktop Protocol,0.000414662
+56,T1027.001,Binary Padding,0.000406517
+57,T1560.001,Archive via Utility,0.000402234
+58,T1087.001,Local Account,0.000397849
+59,T1120,Peripheral Device Discovery,0.000393651
+60,T1071.004,DNS,0.000379743
+61,T1102.002,Bidirectional Communication,0.000367807
+62,T1497.003,Time Based Evasion,0.000367725
+63,T1564.003,Hidden Window,0.000367605
+64,T1008,Fallback Channels,0.000365368
+65,T1571,Non-Standard Port,0.000361
+66,T1007,System Service Discovery,0.000356554
+67,T1547.009,Shortcut Modification,0.000346437
+68,T1129,Shared Modules,0.000331721
+69,T1087.002,Domain Account,0.000330057
+70,T1560.003,Archive via Custom Method,0.000329486
+71,T1570,Lateral Tool Transfer,0.000317561
+72,T1059.007,JavaScript,0.000315734
+73,T1125,Video Capture,0.000307735
+74,T1566.002,Spearphishing Link,0.000302895
+75,T1027.005,Indicator Removal from Tools,0.000299902
+76,T1059.006,Python,0.000288169
+77,T1135,Network Share Discovery,0.000281416
+78,T1518,Software Discovery,0.00027812
+79,T1027.009,Embedded Payloads,0.000275842
+80,T1203,Exploitation for Client Execution,0.000271744
+81,T1018,Remote System Discovery,0.000270396
+82,T1090.002,External Proxy,0.000264605
+83,T1583.001,Domains,0.000262574
+84,T1218.010,Regsvr32,0.000260883
+85,T1069.001,Local Groups,0.000258783
+86,T1025,Data from Removable Media,0.00025441
+87,T1562.004,Disable or Modify System Firewall,0.000246446
+88,T1021.002,SMB/Windows Admin Shares,0.000243268
+89,T1020,Automated Exfiltration,0.000238337
+90,T1567.002,Exfiltration to Cloud Storage,0.000231319
+91,T1090.001,Internal Proxy,0.000230289
+92,T1552.001,Credentials In Files,0.000228694
+93,T1059.004,Unix Shell,0.000219269
+94,T1078.002,Domain Accounts,0.000213684
+95,T1090.003,Multi-hop Proxy,0.00021225
+96,T1123,Audio Capture,0.00020864
+97,T1218.005,Mshta,0.00020652
+98,T1069.002,Domain Groups,0.000201526
+99,T1048.003,Exfiltration Over Unencrypted Non-C2 Protocol,0.000191859
+100,T1587.001,Malware,0.000188998
+101,T1070.001,Clear Windows Event Logs,0.000184953
+102,T1560.002,Archive via Library,0.000183176
+103,T1091,Replication Through Removable Media,0.00018128
+104,T1071.003,Mail Protocols,0.000179132
+105,T1574.001,DLL Search Order Hijacking,0.000175082
+106,T1055.002,Portable Executable Injection,0.000174394
+107,T1027.003,Steganography,0.000171565
+108,T1568.002,Domain Generation Algorithms,0.000165982
+109,T1614.001,System Language Discovery,0.000163717
+110,T1001.003,Protocol Impersonation,0.000160596
+111,T1134.001,Token Impersonation/Theft,0.000159021
+112,T1489,Service Stop,0.00015109
+113,T1550.002,Pass the Hash,0.000147343
+114,T1102.001,Dead Drop Resolver,0.000146425
+115,T1071.002,File Transfer Protocols,0.000145953
+116,T1132.002,Non-Standard Encoding,0.000145039
+117,T1114.001,Local Email Collection,0.000145009
+118,T1003.002,Security Account Manager,0.000142435
+119,T1046,Network Service Discovery,0.000135382
+120,T1529,System Shutdown/Reboot,0.000135345
+121,T1016.001,Internet Connection Discovery,0.00013406
+122,T1221,Template Injection,0.000131726
+123,T1027.007,Dynamic API Resolution,0.000130965
+124,T1620,Reflective Code Loading,0.000130186
+125,T1134.002,Create Process with Token,0.00012853
+126,T1218.007,Msiexec,0.000128068
+127,T1572,Protocol Tunneling,0.000127185
+128,T1029,Scheduled Transfer,0.000126388
+129,T1543.001,Launch Agent,0.000125234
+130,T1608.001,Upload Malware,0.000123482
+131,T1559.001,Component Object Model,0.000123265
+132,T1583.004,Server,0.000123241
+133,T1115,Clipboard Data,0.000118106
+134,T1559.002,Dynamic Data Exchange,0.000114033
+135,T1055.004,Asynchronous Procedure Call,0.000111868
+136,T1585.002,Email Accounts,0.000108684
+137,T1055,Process Injection,0.000102238
+138,T1217,Browser Information Discovery,0.000101622
+139,T1080,Taint Shared Content,0.00010157
+140,T1561.002,Disk Structure Wipe,0.00010084
+141,T1185,Browser Session Hijacking,9.99734E-05
+142,T1547.004,Winlogon Helper DLL,9.73818E-05
+143,T1595.002,Vulnerability Scanning,9.69078E-05
+144,T1546.015,Component Object Model Hijacking,9.21883E-05
+145,T1588.003,Code Signing Certificates,9.09223E-05
+146,T1484.001,Group Policy Modification,9.05413E-05
+147,T1564.004,NTFS File Attributes,9.02616E-05
+148,T1584.004,Server,8.91942E-05
+149,T1485,Data Destruction,8.85789E-05
+150,T1053.003,Cron,8.84568E-05
+151,T1014,Rootkit,8.80481E-05
+152,T1622,Debugger Evasion,8.75481E-05
+153,T1078.003,Local Accounts,8.7437E-05
+154,T1222.002,Linux and Mac File and Directory Permissions Modification,8.73442E-05
+155,T1588.004,Digital Certificates,8.49664E-05
+156,T1070.009,Clear Persistence,8.30904E-05
+157,T1055.003,Thread Execution Hijacking,8.13499E-05
+158,T1027.004,Compile After Delivery,8.07242E-05
+159,T1110.003,Password Spraying,8.02176E-05
+160,T1201,Password Policy Discovery,7.98864E-05
+161,T1136.001,Local Account,7.87794E-05
+162,T1583.006,Web Services,7.79741E-05
+163,T1543.002,Systemd Service,7.67685E-05
+164,T1543.004,Launch Daemon,7.64422E-05
+165,T1587.003,Digital Certificates,7.59827E-05
+166,T1480,Execution Guardrails,7.5569E-05
+167,T1110.001,Password Guessing,7.53625E-05
+168,T1505.003,Web Shell,7.52358E-05
+169,T1036.001,Invalid Code Signature,7.5128E-05
+170,T1195.002,Compromise Software Supply Chain,7.49993E-05
+171,T1546.003,Windows Management Instrumentation Event Subscription,7.27809E-05
+172,T1552.004,Private Keys,7.11142E-05
+173,T1197,BITS Jobs,7.03769E-05
+174,T1614,System Location Discovery,6.9932E-05
+175,T1218.001,Compiled HTML File,6.86411E-05
+176,T1110.002,Password Cracking,6.73525E-05
+177,T1001.002,Steganography,6.59442E-05
+178,T1588.001,Malware,6.53373E-05
+179,T1583.003,Virtual Private Server,6.52947E-05
+180,T1003.004,LSA Secrets,6.39186E-05
+181,T1087.003,Email Account,6.15658E-05
+182,T1222.001,Windows File and Directory Permissions Modification,6.06416E-05
+183,T1565.002,Transmitted Data Manipulation,5.94266E-05
+184,T1056.004,Credential API Hooking,5.88429E-05
+185,T1205,Traffic Signaling,5.74546E-05
+186,T1589.002,Email Addresses,5.68894E-05
+187,T1558.003,Kerberoasting,5.61961E-05
+188,T1037.001,Logon Script (Windows),5.60464E-05
+189,T1055.013,Process Doppelgänging,5.49559E-05
+190,T1003.003,NTDS,5.49115E-05
+191,T1090.004,Domain Fronting,5.46349E-05
+192,T1114.002,Remote Email Collection,5.41813E-05
+193,T1480.001,Environmental Keying,5.41232E-05
+194,T1134.004,Parent PID Spoofing,5.38813E-05
+195,T1539,Steal Web Session Cookie,5.37692E-05
+196,T1136.002,Domain Account,5.31889E-05
+197,T1574.011,Services Registry Permissions Weakness,5.19761E-05
+198,T1056.002,GUI Input Capture,5.11887E-05
+199,T1037.004,RC Scripts,4.86069E-05
+200,T1003.005,Cached Domain Credentials,4.83804E-05
+201,T1074.002,Remote Data Staging,4.73737E-05
+202,T1219,Remote Access Software,4.62742E-05
+203,T1505.001,SQL Stored Procedures,4.6065E-05
+204,T1584.001,Domains,4.59975E-05
+205,T1566.003,Spearphishing via Service,4.59807E-05
+206,T1482,Domain Trust Discovery,4.59771E-05
+207,T1598.003,Spearphishing Link,4.58597E-05
+208,T1587.002,Code Signing Certificates,4.44087E-05
+209,T1218.004,InstallUtil,4.33651E-05
+210,T1550.003,Pass the Ticket,4.29458E-05
+211,T1568.001,Fast Flux DNS,4.25343E-05
+212,T1027.006,HTML Smuggling,4.20128E-05
+213,T1070.003,Clear Command History,4.17396E-05
+214,T1036.003,Rename System Utilities,4.15971E-05
+215,T1027.010,Command Obfuscation,4.1569E-05
+216,T1553.005,Mark-of-the-Web Bypass,4.13336E-05
+217,T1040,Network Sniffing,4.10969E-05
+218,T1497.002,User Activity Based Checks,4.07397E-05
+219,T1553.001,Gatekeeper Bypass,3.91272E-05
+220,T1021.004,SSH,3.88813E-05
+221,T1548.003,Sudo and Sudo Caching,3.81739E-05
+222,T1553.004,Install Root Certificate,3.80191E-05
+223,T1534,Internal Spearphishing,3.79674E-05
+224,T1562.002,Disable Windows Event Logging,3.74803E-05
+225,T1561.001,Disk Content Wipe,3.71985E-05
+226,T1547.012,Print Processors,3.71172E-05
+227,T1555.004,Windows Credential Manager,3.71096E-05
+228,T1555.001,Keychain,3.69456E-05
+229,T1021.005,VNC,3.68413E-05
+230,T1027.008,Stripped Payloads,3.61245E-05
+231,T1542.003,Bootkit,3.42325E-05
+232,T1059.002,AppleScript,3.37943E-05
+233,T1608.002,Upload Tool,3.36412E-05
+234,T1052.001,Exfiltration over USB,3.35483E-05
+235,T1127.001,MSBuild,3.31703E-05
+236,T1608.004,Drive-by Target,3.31654E-05
+237,T1021.006,Windows Remote Management,3.3117E-05
+238,T1555.005,Password Managers,3.3071E-05
+239,T1552.002,Credentials in Registry,3.28336E-05
+240,T1547.006,Kernel Modules and Extensions,3.25563E-05
+241,T1574.007,Path Interception by PATH Environment Variable,3.1039E-05
+242,T1027.012,LNK Icon Smuggling,3.08241E-05
+243,T1036.002,Right-to-Left Override,3.08184E-05
+244,T1102.003,One-Way Communication,3.04589E-05
+245,T1553.006,Code Signing Policy Modification,3.03036E-05
+246,T1078.001,Default Accounts,2.93327E-05
+247,T1608.003,Install Digital Certificate,2.93002E-05
+248,T1491.001,Internal Defacement,2.92594E-05
+249,T1218.002,Control Panel,2.86747E-05
+250,T1218.003,CMSTP,2.83749E-05
+251,T1565.001,Stored Data Manipulation,2.727E-05
+252,T1552.006,Group Policy Preferences,2.66729E-05
+253,T1546.004,Unix Shell Configuration Modification,2.62508E-05
+254,T1615,Group Policy Discovery,2.59856E-05
+255,T1505.004,IIS Components,2.59501E-05
+256,T1588.005,Exploits,2.47809E-05
+257,T1039,Data from Network Shared Drive,2.46791E-05
+258,T1003.006,DCSync,2.45258E-05
+259,T1564.002,Hidden Users,2.43515E-05
+260,T1562.003,Impair Command History Logging,2.36201E-05
+261,T1030,Data Transfer Size Limits,2.3579E-05
+262,T1554,Compromise Client Software Binary,2.34985E-05
+263,T1574.013,KernelCallbackTable,2.30781E-05
+264,T1505.002,Transport Agent,2.2787E-05
+265,T1568,Dynamic Resolution,2.26725E-05
+266,T1574.006,Dynamic Linker Hijacking,2.23463E-05
+267,T1569.001,Launchctl,2.2209E-05
+268,T1585.001,Social Media Accounts,2.19804E-05
+269,T1205.002,Socket Filters,2.16362E-05
+270,T1546.012,Image File Execution Options Injection,2.11641E-05
+271,T1037.005,Startup Items,2.09934E-05
+272,T1546.011,Application Shimming,2.08236E-05
+273,T1546.009,AppCert DLLs,2.04475E-05
+274,T1070.005,Network Share Connection Removal,2.01106E-05
+275,T1588.006,Vulnerabilities,1.96198E-05
+276,T1574.009,Path Interception by Unquoted Path,1.95236E-05
+277,T1111,Multi-Factor Authentication Interception,1.94101E-05
+278,T1598.002,Spearphishing Attachment,1.92526E-05
+279,T1564.005,Hidden File System,1.92215E-05
+280,T1593.001,Social Media,1.89367E-05
+281,T1114.003,Email Forwarding Rule,1.8674E-05
+282,T1594,Search Victim-Owned Websites,1.84509E-05
+283,T1546.001,Change Default File Association,1.82433E-05
+284,T1137.006,Add-ins,1.81556E-05
+285,T1021.003,Distributed Component Object Model,1.78863E-05
+286,T1092,Communication Through Removable Media,1.74041E-05
+287,T1036.008,Masquerade File Type,1.73371E-05
+288,T1558.001,Golden Ticket,1.70145E-05
+289,T1574.008,Path Interception by Search Order Hijacking,1.67629E-05
+290,T1220,XSL Script Processing,1.66187E-05
+291,T1547.010,Port Monitors,1.61831E-05
+292,T1055.005,Thread Local Storage,1.61755E-05
+293,T1542.001,System Firmware,1.57423E-05
+294,T1048.002,Exfiltration Over Asymmetric Encrypted Non-C2 Protocol,1.52505E-05
+295,T1036.007,Double File Extension,1.52318E-05
+296,T1548.001,Setuid and Setgid,1.49168E-05
+297,T1586.002,Email Accounts,1.46623E-05
+298,T1547.008,LSASS Driver,1.45083E-05
+299,T1552.003,Bash History,1.37268E-05
+300,T1110.004,Credential Stuffing,1.35899E-05
+301,T1562.006,Indicator Blocking,1.33119E-05
+302,T1546.007,Netsh Helper DLL,1.31057E-05
+303,T1563.002,RDP Hijacking,1.26772E-05
+304,T1070.002,Clear Linux or Mac System Logs,1.26696E-05
+305,T1546.010,AppInit DLLs,1.22386E-05
+306,T1591.004,Identify Roles,1.22174E-05
+307,T1547.005,Security Support Provider,1.20563E-05
+308,T1542.002,Component Firmware,1.17873E-05
+309,T1213.002,Sharepoint,1.15034E-05
+310,T1589.003,Employee Names,1.13558E-05
+311,T1556.003,Pluggable Authentication Modules,1.11507E-05
+312,T1656,Impersonation,1.10077E-05
+313,T1585.003,Cloud Accounts,1.06125E-05
+314,T1490,Inhibit System Recovery,1.06099E-05
+315,T1547.015,Login Items,1.06024E-05
+316,T1564.010,Process Argument Spoofing,1.05285E-05
+317,T1567.001,Exfiltration to Code Repository,1.04622E-05
+318,T1098.002,Additional Email Delegate Permissions,1.03779E-05
+319,T1556.004,Network Device Authentication,1.03639E-05
+320,T1202,Indirect Command Execution,1.0244E-05
+321,T1574.010,Services File Permissions Weakness,1.00971E-05
+322,T1546.013,PowerShell Profile,9.70739E-06
+323,T1036.006,Space after Filename,9.62533E-06
+324,T1547.013,XDG Autostart Entries,9.59963E-06
+325,T1574.012,COR_PROFILER,9.53937E-06
+326,T1558.002,Silver Ticket,9.45971E-06
+327,T1546.008,Accessibility Features,9.445E-06
+328,T1557.001,LLMNR/NBT-NS Poisoning and SMB Relay,9.3954E-06
+329,T1552.005,Cloud Instance Metadata API,9.36165E-06
+330,T1218.009,Regsvcs/Regasm,9.33074E-06
+331,T1547.014,Active Setup,9.24548E-06
+332,T1564.008,Email Hiding Rules,9.07453E-06
+333,T1652,Device Driver Discovery,8.93063E-06
+334,T1583.002,DNS Server,8.92148E-06
+335,T1591,Gather Victim Org Information,8.89187E-06
+336,T1602,Data from Configuration Repository,8.52228E-06
+337,T1550.001,Application Access Token,8.06183E-06
+338,T1600,Weaken Encryption,7.74147E-06
+339,T1557.002,ARP Cache Poisoning,7.6108E-06
+340,T1211,Exploitation for Defense Evasion,7.59473E-06
+341,T1078.004,Cloud Accounts,7.58242E-06
+342,T1003.008,/etc/passwd and /etc/shadow,7.52187E-06
+343,T1053.002,At,7.46647E-06
+344,T1591.002,Business Relationships,7.42139E-06
+345,T1491.002,External Defacement,7.41787E-06
+346,T1070.007,Clear Network Connection History and Configurations,7.14722E-06
+347,T1650,Acquire Access,7.06494E-06
+348,T1027.011,Fileless Storage,6.80452E-06
+349,T1056.003,Web Portal Capture,6.80341E-06
+350,T1218.012,Verclsid,6.7861E-06
+351,T1205.001,Port Knocking,6.77008E-06
+352,T1499.004,Application or System Exploitation,6.65616E-06
+353,T1595.001,Scanning IP Blocks,6.52253E-06
+354,T1590.001,Domain Properties,6.49952E-06
+355,T1098.001,Additional Cloud Credentials,6.16504E-06
+356,T1548.004,Elevated Execution with Prompt,6.16496E-06
+357,T1595.003,Wordlist Scanning,5.93705E-06
+358,T1218.008,Odbcconf,5.71414E-06
+359,T1550.004,Web Session Cookie,5.6609E-06
+360,T1584.005,Botnet,5.54037E-06
+361,T1546.016,Installer Packages,4.97172E-06
+362,T1609,Container Administration Command,4.06568E-06
+363,T1055.008,Ptrace System Calls,3.93574E-06
+364,T1596.005,Scan Databases,3.83868E-06
+365,T1499.002,Service Exhaustion Flood,3.72399E-06
+366,T1601,Modify System Image,3.6504E-06
+367,T1584.006,Web Services,3.57541E-06
+368,T1547.003,Time Providers,3.47638E-06
+369,T1070.008,Clear Mailbox Data,3.42063E-06
+370,T1564.011,Ignore Process Interrupts,3.19825E-06
+371,T1098.005,Device Registration,3.01815E-06
+372,T1134.005,SID-History Injection,2.95136E-06
+373,T1555.006,Cloud Secrets Management Stores,2.71137E-06
+374,T1498.001,Direct Network Flood,2.46707E-06
+375,T1592.002,Software,2.39265E-06
+376,T1074,Data Staged,2.30978E-06
+377,T1591.003,Identify Business Tempo,2.28423E-06
+378,T1563.001,SSH Hijacking,2.28017E-06
+379,T1591.001,Determine Physical Locations,2.27587E-06
+380,T1564.007,VBA Stomping,2.25663E-06
+381,T1590.005,IP Addresses,2.10949E-06
+382,T1564.006,Run Virtual Instance,2.03551E-06
+383,T1565.003,Runtime Data Manipulation,1.95145E-06
+384,T1499.001,OS Exhaustion Flood,1.50235E-06
+385,T1055.009,Proc Memory,9.33E-07
+386,T1547.002,Authentication Package,8.18E-07
+387,T1555.002,Securityd Memory,4.00E-07
+388,T1055.011,Extra Window Memory Injection,2.22E-07
+389,T1195.003,Compromise Hardware Supply Chain,1.08E-07
+390,T1564.009,Resource Forking,1.82E-08
+391,T1606.001,Web Cookies,0
+391,T1567.004,Exfiltration Over Webhook,0
+391,T1546.014,Emond,0
+391,T1598.004,Spearphishing Voice,0
+391,T1053.006,Systemd Timers,0
+391,T1218.013,Mavinject,0
+391,T1552.008,Chat Messages,0
+391,T1011.001,Exfiltration Over Bluetooth,0
+391,T1648,Serverless Execution,0
+391,T1546.002,Screensaver,0
+391,T1037.003,Network Logon Script,0
+391,T1556.006,Multi-Factor Authentication,0
+391,T1546.005,Trap,0
+391,T1596.004,CDNs,0
+391,T1055.015,ListPlanting,0
+391,T1578.004,Revert Cloud Instance,0
+391,T1567.003,Exfiltration to Text Storage Sites,0
+391,T1574.004,Dylib Hijacking,0
+391,T1059.009,Cloud API,0
+391,T1651,Cloud Administration Command,0
+391,T1598.001,Spearphishing Service,0
+391,T1556.008,Network Provider DLL,0
+391,T1568.003,DNS Calculation,0
+391,T1562.011,Spoof Security Alerting,0
+391,T1535,Unused/Unsupported Cloud Regions,0
+391,T1654,Log Enumeration,0
+391,T1590.002,DNS,0
+391,T1505.005,Terminal Services DLL,0
+391,T1216.001,PubPrn,0
+391,T1590.006,Network Security Appliances,0
+391,T1592.003,Firmware,0
+391,T1590.003,Network Trust Dependencies,0
+391,T1608.006,SEO Poisoning,0
+392,T1218.014,MMC,-5.18E-44
+393,T1547.007,Re-opened Applications,-6.95E-09
+394,T1599.001,Network Address Translation Traversal,-7.56E-09
+395,T1542.004,ROMMONkit,-1.06E-08
+396,T1542.005,TFTP Boot,-1.52E-08
+397,T1612,Build Image on Host,-2.02E-08
+398,T1556.002,Password Filter DLL,-3.40E-08
+399,T1578.001,Create Snapshot,-4.52E-08
+400,T1602.001,SNMP (MIB Dump),-4.80E-08
+401,T1557.003,DHCP Spoofing,-1.01E-07
+402,T1558.004,AS-REP Roasting,-1.42E-07
+403,T1053.007,Container Orchestration Job,-1.62E-07
+404,T1601.001,Patch System Image,-1.73E-07
+405,T1601.002,Downgrade System Image,-1.80E-07
+406,T1556.007,Hybrid Identity,-1.86E-07
+407,T1003.007,Proc Filesystem,-2.02E-07
+408,T1037,Boot or Logon Initialization Scripts,-2.10E-07
+409,T1559.003,XPC Services,-2.13E-07
+410,T1580,Cloud Infrastructure Discovery,-2.15E-07
+411,T1659,Content Injection,-2.75E-07
+412,T1069.003,Cloud Groups,-2.76E-07
+413,T1134.003,Make and Impersonate Token,-4.02E-07
+414,T1499.003,Application Exhaustion Flood,-4.59E-07
+415,T1596.001,DNS/Passive DNS,-4.93E-07
+416,T1584.002,DNS Server,-5.08E-07
+417,T1602.002,Network Device Configuration Dump,-5.22E-07
+418,T1592.001,Hardware,-5.44E-07
+418,T1584.007,Serverless,-5.44E-07
+419,T1583.007,Serverless,-5.52E-07
+420,T1657,Financial Theft,-5.65E-07
+421,T1590.004,Network Topology,-6.17E-07
+422,T1586.003,Cloud Accounts,-6.31E-07
+423,T1562.007,Disable or Modify Cloud Firewall,-6.45E-07
+424,T1619,Cloud Storage Object Discovery,-7.13E-07
+425,T1647,Plist File Modification,-7.81E-07
+426,T1137.003,Outlook Forms,-8.53E-07
+427,T1137.005,Outlook Rules,-8.55E-07
+428,T1542,Pre-OS Boot,-9.12E-07
+429,T1552.007,Container API,-9.14E-07
+430,T1200,Hardware Additions,-9.30E-07
+431,T1649,Steal or Forge Authentication Certificates,-9.34E-07
+432,T1611,Escape to Host,-9.40E-07
+433,T1037.002,Login Hook,-1.04479E-06
+434,T1584.003,Virtual Private Server,-1.04942E-06
+435,T1484.002,Domain Trust Modification,-1.10331E-06
+436,T1613,Container and Resource Discovery,-1.20834E-06
+437,T1207,Rogue Domain Controller,-1.52168E-06
+438,T1606.002,SAML Tokens,-1.57047E-06
+439,T1538,Cloud Service Dashboard,-1.68305E-06
+440,T1137.002,Office Test,-1.82326E-06
+441,T1610,Deploy Container,-1.82368E-06
+442,T1583.008,Malvertising,-1.85665E-06
+443,T1553.003,SIP and Trust Provider Hijacking,-1.87152E-06
+444,T1055.014,VDSO Hijacking,-1.94825E-06
+445,T1137.004,Outlook Home Page,-2.40136E-06
+446,T1021.007,Cloud Services,-2.47001E-06
+446,T1566.004,Spearphishing Voice,-2.47001E-06
+447,T1578.002,Create Cloud Instance,-2.52882E-06
+448,T1556.005,Reversible Encryption,-2.61516E-06
+449,T1562.008,Disable or Modify Cloud Logs,-2.63622E-06
+450,T1098.004,SSH Authorized Keys,-2.65538E-06
+451,T1587.004,Exploits,-2.67376E-06
+452,T1020.001,Traffic Duplication,-2.70579E-06
+453,T1562.009,Safe Mode Boot,-2.75517E-06
+454,T1556.001,Domain Controller Authentication,-2.77263E-06
+455,T1491,Defacement,-2.86507E-06
+456,T1052,Exfiltration Over Physical Medium,-2.88934E-06
+457,T1213.003,Code Repositories,-3.03089E-06
+457,T1597.002,Purchase Technical Data,-3.03089E-06
+457,T1593.003,Code Repositories,-3.03089E-06
+458,T1213.001,Confluence,-3.13025E-06
+459,T1578.003,Delete Cloud Instance,-3.13481E-06
+460,T1048.001,Exfiltration Over Symmetric Encrypted Non-C2 Protocol,-3.75852E-06
+461,T1562.010,Downgrade Attack,-3.81136E-06
+462,T1195.001,Compromise Software Dependencies and Development Tools,-3.9654E-06
+463,T1586.001,Social Media Accounts,-4.03099E-06
+464,T1497,Virtualization/Sandbox Evasion,-4.04257E-06
+465,T1098.003,Additional Cloud Roles,-4.0766E-06
+466,T1059.008,Network Device CLI,-4.11729E-06
+467,T1087.004,Cloud Account,-4.14963E-06
+468,T1555,Credentials from Password Stores,-4.53287E-06
+469,T1621,Multi-Factor Authentication Request Generation,-4.91172E-06
+470,T1574.005,Executable Installer File Permissions Weakness,-5.33949E-06
+471,T1006,Direct Volume Access,-5.79359E-06
+472,T1136.003,Cloud Account,-5.91487E-06
+473,T1498.002,Reflection Amplification,-6.3539E-06
+474,T1204.003,Malicious Image,-6.53725E-06
+475,T1597,Search Closed Sources,-6.58707E-06
+476,T1526,Cloud Service Discovery,-7.1898E-06
+477,T1592.004,Client Configurations,-7.34294E-06
+478,T1596,Search Open Technical Databases,-8.43647E-06
+479,T1213,Data from Information Repositories,-9.81636E-06
+480,T1599,Network Boundary Bridging,-9.99817E-06
+481,T1593.002,Search Engines,-1.04498E-05
+482,T1537,Transfer Data to Cloud Account,-1.07175E-05
+483,T1589.001,Credentials,-1.13055E-05
+484,T1578,Modify Cloud Compute Infrastructure,-1.23383E-05
+485,T1608.005,Link Target,-1.40753E-05
+486,T1556,Modify Authentication Process,-1.42301E-05
+487,T1606,Forge Web Credentials,-1.43949E-05
+488,T1072,Software Deployment Tools,-1.73487E-05
+489,T1586,Compromise Accounts,-1.88425E-05
+490,T1210,Exploitation of Remote Services,-2.25776E-05
+491,T1212,Exploitation for Credential Access,-2.31538E-05
+492,T1484,Domain Policy Modification,-2.35326E-05
+493,T1560,Archive Collected Data,-2.41232E-05
+494,T1590,Gather Victim Network Information,-2.52071E-05
+495,T1565,Data Manipulation,-2.60261E-05
+496,T1593,Search Open Websites/Domains,-2.60456E-05
+497,T1216,System Script Proxy Execution,-2.80999E-05
+498,T1525,Implant Internal Image,-3.02309E-05
+499,T1011,Exfiltration Over Other Network Medium,-3.17346E-05
+500,T1098,Account Manipulation,-3.20858E-05
+501,T1132,Data Encoding,-3.32435E-05
+502,T1001,Data Obfuscation,-3.45591E-05
+503,T1563,Remote Service Session Hijacking,-3.4636E-05
+504,T1069,Permission Groups Discovery,-3.53667E-05
+505,T1499,Endpoint Denial of Service,-3.85763E-05
+506,T1561,Disk Wipe,-3.89393E-05
+507,T1528,Steal Application Access Token,-4.04005E-05
+508,T1134,Access Token Manipulation,-4.10278E-05
+509,T1557,Adversary-in-the-Middle,-4.21253E-05
+510,T1137.001,Office Template Macros,-4.23233E-05
+511,T1583.005,Botnet,-4.3105E-05
+512,T1495,Firmware Corruption,-4.4005E-05
+513,T1608,Stage Capabilities,-4.45145E-05
+514,T1585,Establish Accounts,-4.47862E-05
+515,T1048,Exfiltration Over Alternative Protocol,-4.59135E-05
+516,T1558,Steal or Forge Kerberos Tickets,-5.39099E-05
+517,T1222,File and Directory Permissions Modification,-5.39914E-05
+518,T1189,Drive-by Compromise,-5.64772E-05
+519,T1187,Forced Authentication,-6.52018E-05
+520,T1592,Gather Victim Host Information,-6.76205E-05
+521,T1598,Phishing for Information,-6.812E-05
+522,T1559,Inter-Process Communication,-6.84013E-05
+523,T1589,Gather Victim Identity Information,-6.99836E-05
+524,T1550,Use Alternate Authentication Material,-7.32897E-05
+525,T1567,Exfiltration Over Web Service,-7.42927E-05
+526,T1595,Active Scanning,-7.74456E-05
+527,T1531,Account Access Removal,-8.25861E-05
+528,T1546,Event Triggered Execution,-9.05437E-05
+529,T1127,Trusted Developer Utilities Proxy Execution,-9.11393E-05
+530,T1078,Valid Accounts,-9.76138E-05
+531,T1137,Office Application Startup,-9.76532E-05
+532,T1530,Data from Cloud Storage,-0.000102112
+533,T1133,External Remote Services,-0.000105011
+534,T1068,Exploitation for Privilege Escalation,-0.000107463
+535,T1584,Compromise Infrastructure,-0.000108959
+536,T1498,Network Denial of Service,-0.000120224
+537,T1199,Trusted Relationship,-0.000127679
+538,T1588,Obtain Capabilities,-0.000130875
+539,T1548,Abuse Elevation Control Mechanism,-0.000134522
+540,T1136,Create Account,-0.000136104
+541,T1587,Develop Capabilities,-0.00014062
+542,T1552,Unsecured Credentials,-0.000148008
+543,T1573,Encrypted Channel,-0.00015309
+544,T1486,Data Encrypted for Impact,-0.000160531
+545,T1564,Hide Artifacts,-0.000166645
+546,T1195,Supply Chain Compromise,-0.000176641
+547,T1090,Proxy,-0.000179514
+548,T1569,System Services,-0.000188697
+549,T1543,Create or Modify System Process,-0.000189945
+550,T1583,Acquire Infrastructure,-0.000190247
+551,T1087,Account Discovery,-0.000192881
+552,T1114,Email Collection,-0.000222386
+553,T1553,Subvert Trust Controls,-0.000227332
+554,T1176,Browser Extensions,-0.000242536
+555,T1104,Multi-Stage Channels,-0.000256966
+556,T1110,Brute Force,-0.000260304
+557,T1070,Indicator Removal,-0.000260461
+558,T1496,Resource Hijacking,-0.000280504
+559,T1505,Server Software Component,-0.000320662
+560,T1562,Impair Defenses,-0.000344351
+561,T1574,Hijack Execution Flow,-0.000422596
+562,T1071,Application Layer Protocol,-0.000438736
+563,T1190,Exploit Public-Facing Application,-0.000474745
+564,T1218,System Binary Proxy Execution,-0.000486639
+565,T1102,Web Service,-0.000504543
+566,T1003,OS Credential Dumping,-0.000560806
+567,T1021,Remote Services,-0.000605866
+568,T1053,Scheduled Task/Job,-0.00062953
+569,T1056,Input Capture,-0.000653845
+570,T1204,User Execution,-0.000728012
+571,T1036,Masquerading,-0.000903407
+572,T1547,Boot or Logon Autostart Execution,-0.001011347
+573,T1059,Command and Scripting Interpreter,-0.001612991
+574,T1566,Phishing,-0.002146469
