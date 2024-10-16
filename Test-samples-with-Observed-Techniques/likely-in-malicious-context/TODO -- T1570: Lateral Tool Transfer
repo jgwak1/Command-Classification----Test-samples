@@ -1,0 +1,12 @@
+[Test-sample]:
+C:\Users\kmitnick\AppData\Roaming\TransbaseOdbcDriver\pscp.exe -scp -pw "79a&LbjM@MlW8XZa" C:\Users\kmitnick\AppData\Roaming\TransbaseOdbcDriver\psexec.py kmitnick@10.0.0.7:/tmp/psexec.py;
+C:\Users\kmitnick\AppData\Roaming\TransbaseOdbcDriver\pscp.exe -scp -pw "79a&LbjM@MlW8XZa" C:\Users\kmitnick\AppData\Roaming\TransbaseOdbcDriver\runtime kmitnick@10.0.0.7:/tmp/runtime;
+C:\Users\kmitnick\AppData\Roaming\TransbaseOdbcDriver\pscp.exe -scp -pw "79a&LbjM@MlW8XZa" C:\Users\kmitnick\AppData\Roaming\TransbaseOdbcDriver\tiny.exe kmitnick@10.0.0.7:/tmp/tiny;
+
+[Observed-Techniques]:
+*TODO: Manually it was hard to find set of techniques where T1570 is in Top-20 of the predicted techniuqes of MITRE-TIE. 
+       So might need to figure out ones MITRE-TIE in python notebook or source-code
+
+[Notes]:
+T1570: Lateral Tool Transfer ( 5/5 confidence , while ChatGPT4.o w/o knowledge-file confused as “Ingress Tool Transfer” with 5/5 which is acceptable )  :  
+MITRE-TIE TOP #<X> with { <TODO> } from CTI-frequency-dataset  [ id: <N> ] 
