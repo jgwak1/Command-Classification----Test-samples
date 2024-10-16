@@ -1,0 +1,27 @@
+[Test-sample]:
+ls -lsahR /var/ 2>/dev/null
+
+[Observed-Techniques]:
+T1566.001
+T1027.009
+T1543.001
+T1082
+T1041
+T1018
+T1105
+T1021
+T1021.004
+T1059.004
+T1074.001
+T1135
+T1119
+T1564.001
+T1560.001
+T1204.002
+T1036
+
+
+[Notes]:
+T1083: File and Directory Discovery ( 5/5 confidence )  :  
+MITRE-TIE TOP #5 with { T1566.001, T1027.009, T1543.001, T1082, T1041, T1018, T1105, T1021, T1021.004, T1059.004, T1074.001, T1135, T1119, T1564.001, T1560.001, T1204.002, T1036 } 
+from CTI-frequency-dataset  [ id: 16 ] 
