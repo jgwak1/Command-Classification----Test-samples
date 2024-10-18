@@ -7,7 +7,6 @@ T1082: System Information Discovery
 T1012: Query Registry
 T1001.003: Protocol Impersonation
 T1571: Non-Standard Port
-T1112: Modify Registry
 T1105: Ingress Tool Transfer
 T1070: Indicator Removal
 T1083: File and Directory Discovery
