@@ -1,0 +1,1 @@
+"adfind.exe" -subnets -f (objectCategory=subnet) > ad_subnets.txt

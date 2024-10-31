@@ -1,0 +1,2 @@
+Move-Item pillowMint.exe debug.exe;
+.\debug.exe;

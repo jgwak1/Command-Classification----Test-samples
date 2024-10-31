@@ -1,0 +1,42 @@
+rdp_pid=$(pgrep -f xfreerdp);
+rdp_window=$(xdotool search --pid "$rdp_pid");
+xdotool mousemove --window "$rdp_window" 100 100 click 1;
+xdotool key --window "$rdp_window" Ctrl+Escape;
+sleep 6;
+xdotool type --window "$rdp_window" "run";
+sleep 6;
+xdotool key --window "$rdp_window" Return;
+sleep 6;
+xdotool type --window "$rdp_window" "microsoft-edge";
+xdotool key --window "$rdp_window" shift+colon; 
+xdotool type --window "$rdp_window" "http";
+xdotool key --window "$rdp_window" shift+colon; 
+xdotool type --window "$rdp_window" "//anto-int.com/";
+xdotool key --window "$rdp_window" shift+N; 
+xdotool key --window "$rdp_window" shift+T; 
+xdotool key --window "$rdp_window" shift+F; 
+xdotool key --window "$rdp_window" shift+V; 
+xdotool type --window "$rdp_window" "ersion.exe";
+xdotool key --window "$rdp_window" Return;
+sleep 20;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Tab; sleep 1;
+xdotool key --window "$rdp_window" Return;

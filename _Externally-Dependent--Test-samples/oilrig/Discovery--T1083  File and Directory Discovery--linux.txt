@@ -1,0 +1,10 @@
+sleep 3;
+rdp_pid=$(pgrep -f "xfreerdp.*/v:localhost");
+rdp_window=$(xdotool search --pid "$rdp_pid");
+sleep 3; 
+xdotool type --window "$rdp_window" 'dir "C:\Program Files\Microsoft SQL Server\"';
+xdotool key --window "$rdp_window" Return;
+sleep 3; 
+xdotool type --window "$rdp_window" 'dir "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup\"';
+xdotool key --window "$rdp_window" Return;
+sleep 4;

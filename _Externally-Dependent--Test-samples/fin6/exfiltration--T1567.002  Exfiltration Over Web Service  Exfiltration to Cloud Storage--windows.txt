@@ -1,0 +1,1 @@
+"putty.exe" -ssh <<JY:NO DEFAULT-VALUE--DESC:'username'>>@127.0.0.1

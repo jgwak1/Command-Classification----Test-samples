@@ -1,0 +1,13 @@
+sleep 30;
+rdp_pid=$(pgrep -f "xfreerdp.*/v:10.0.1.4");
+rdp_window=$(xdotool search --pid "$rdp_pid");
+xdotool windowactivate --sync "$rdp_window" key Super_L;
+sleep 5; xdotool windowactivate --sync "$rdp_window" type --delay 200 "powershell.exe";
+sleep 5; xdotool windowactivate --sync "$rdp_window" key --clearmodifiers --delay 200 Control_L+Shift_L+Return;
+sleep 10; xdotool windowactivate --sync "$rdp_window" key Left;
+sleep 3; xdotool windowactivate --sync "$rdp_window" key Return;
+sleep 15; xdotool windowactivate --sync "$rdp_window" type --delay 200 'copy \\TSCLIENT\X\perfc.exe .\perfc.exe';
+sleep 3; xdotool windowactivate --sync "$rdp_window" key Return;
+sleep 3; xdotool windowactivate --sync "$rdp_window" type --delay 200 '.\perfc.exe';
+sleep 3; xdotool windowactivate --sync "$rdp_window" key Return;
+sleep 30;

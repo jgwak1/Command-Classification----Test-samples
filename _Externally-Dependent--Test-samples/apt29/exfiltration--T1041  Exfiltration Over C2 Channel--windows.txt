@@ -1,0 +1,2 @@
+Import-Module .\upload.ps1 -Verbose -Force;
+Invoke-MultipartFormDataUpload -InFile "C:\Users\Administrator\Desktop\working.zip" -Uri "192.0.2.10/file/upload";

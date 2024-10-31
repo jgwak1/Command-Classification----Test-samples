@@ -1,0 +1,1 @@
+"C:\Windows\Temp\7za.exe" a -mx3 ad.7z ad_*

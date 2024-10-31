@@ -1,0 +1,8 @@
+sleep 30;
+rdp_pid=$(pgrep -f "xfreerdp.*/v:10.0.0.7");
+rdp_window=$(xdotool search --pid "$rdp_pid");
+xdotool key --window "$rdp_window" Super_L;
+sleep 5;
+xdotool windowactivate --sync "$rdp_window" type --delay 200 "C:\Users\judy\Desktop\ChristmasCard.exe";
+sleep 3; xdotool key --window "$rdp_window" Return;
+sleep 30;

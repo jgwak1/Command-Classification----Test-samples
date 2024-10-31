@@ -1,0 +1,1 @@
+exec-background xfreerdp +clipboard /u:oz\\judy /p:"Passw0rd!" /v:10.0.0.7 /cert-ignore

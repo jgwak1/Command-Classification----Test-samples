@@ -1,0 +1,1 @@
+powershell.exe -c "restart-computer -force"

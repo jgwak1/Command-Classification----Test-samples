@@ -1,0 +1,1 @@
+start "C:\PSTools\PsExec.exe" \\127.0.0.1 -u <<JY:NO DEFAULT-VALUE--DESC:'Domain and username'>> -p <<JY:NO DEFAULT-VALUE--DESC:'Valid Password'>> -d -h -r rtrsd -s -accepteula -nobanner c:\windows\temp\sss.exe
