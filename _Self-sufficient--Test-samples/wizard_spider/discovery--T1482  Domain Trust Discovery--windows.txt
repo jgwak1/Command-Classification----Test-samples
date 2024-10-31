@@ -1,0 +1,1 @@
+nltest /domain_trusts /all_trusts >> discovery.txt

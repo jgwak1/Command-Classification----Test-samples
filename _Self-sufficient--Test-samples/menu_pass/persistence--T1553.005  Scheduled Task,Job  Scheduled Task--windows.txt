@@ -1,0 +1,1 @@
+schtasks /create /sc "DAILY" /tn "taskname" /tr "C:\Windows\Temp" /ru "username"

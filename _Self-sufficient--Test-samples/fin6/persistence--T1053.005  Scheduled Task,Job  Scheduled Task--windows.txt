@@ -1,0 +1,1 @@
+"C:\Windows\System32\schtasks.exe" /create /tn "<<JY:NO DEFAULT-VALUE--DESC:'Task Name'>>" /tr "<<JY:NO DEFAULT-VALUE--DESC:'Path of task to run'>>" /sc <<JY:NO DEFAULT-VALUE--DESC:'Schedule for task (MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, and ONEVENT)'>> /ru System

